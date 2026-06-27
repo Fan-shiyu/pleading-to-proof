@@ -1,0 +1,114 @@
+{
+  "threshold": 0.65,
+  "mode_a_total": 17,
+  "mode_a_matched": 1,
+  "recall_percent": 5.9,
+  "records": [
+    {
+      "pb_proposition_id": "pb1",
+      "best_match_mode_a_id": "p6",
+      "best_match_similarity": 0.5,
+      "matched": false
+    },
+    {
+      "pb_proposition_id": "pb2",
+      "best_match_mode_a_id": "p12",
+      "best_match_similarity": 0.81,
+      "matched": true
+    },
+    {
+      "pb_proposition_id": "pb3",
+      "best_match_mode_a_id": "p2",
+      "best_match_similarity": 0.53,
+      "matched": false
+    },
+    {
+      "pb_proposition_id": "pb4",
+      "best_match_mode_a_id": "p2",
+      "best_match_similarity": 0.33,
+      "matched": false
+    }
+  ],
+  "unmatched_mode_a": [
+    {
+      "mode_a_id": "p1",
+      "legal_element_type": "formation",
+      "best_similarity": 0.4
+    },
+    {
+      "mode_a_id": "p2",
+      "legal_element_type": "formation",
+      "best_similarity": 0.53
+    },
+    {
+      "mode_a_id": "p3",
+      "legal_element_type": "formation",
+      "best_similarity": 0.39
+    },
+    {
+      "mode_a_id": "p4",
+      "legal_element_type": "formation",
+      "best_similarity": 0.31
+    },
+    {
+      "mode_a_id": "p5",
+      "legal_element_type": "formation",
+      "best_similarity": 0.3
+    },
+    {
+      "mode_a_id": "p6",
+      "legal_element_type": "timetable",
+      "best_similarity": 0.5
+    },
+    {
+      "mode_a_id": "p7",
+      "legal_element_type": "misrepresentation",
+      "best_similarity": 0.41
+    },
+    {
+      "mode_a_id": "p8",
+      "legal_element_type": "timetable",
+      "best_similarity": 0.44
+    },
+    {
+      "mode_a_id": "p9",
+      "legal_element_type": "scope_change",
+      "best_similarity": 0.29
+    },
+    {
+      "mode_a_id": "p10",
+      "legal_element_type": "go_live_decision",
+      "best_similarity": 0.46
+    },
+    {
+      "mode_a_id": "p11",
+      "legal_element_type": "availability",
+      "best_similarity": 0.51
+    },
+    {
+      "mode_a_id": "p13",
+      "legal_element_type": "acceptance",
+      "best_similarity": 0.37
+    },
+    {
+      "mode_a_id": "p14",
+      "legal_element_type": "training",
+      "best_similarity": 0.38
+    },
+    {
+      "mode_a_id": "p15a",
+      "legal_element_type": "loss_wasted_expenditure",
+      "best_similarity": 0.3
+    },
+    {
+      "mode_a_id": "p15b",
+      "legal_element_type": "loss_of_profit",
+      "best_similarity": 0.3
+    },
+    {
+      "mode_a_id": "p16",
+      "legal_element_type": "loss_wasted_expenditure",
+      "best_similarity": 0.27
+    }
+  ]
+}
