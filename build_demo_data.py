@@ -87,6 +87,16 @@ def validate_summary(summary, top_chunk, prop_text):
     return summary, True
 
 
+def weighted_contribution(chunk):
+    """abs(score) * source_quality_weight * confidence — the Stage 5 weighting.
+    Computed here because Stage 4 does not store it on classified chunks. None when
+    the chunk has no numeric score (flagged / unclassified)."""
+    score = chunk.get("score")
+    if score is None:
+        return None
+    return round(abs(score) * chunk.get("source_quality_weight", 0) * chunk.get("confidence", 0), 4)
+
+
 def build_proposition_object(prop, scoring, classification, retrieval, one_line_summary):
     citation_audit = scoring.get("citation_audit", {})
     most_determinative = citation_audit.get("most_determinative_citation")
@@ -115,7 +125,7 @@ def build_proposition_object(prop, scoring, classification, retrieval, one_line_
             "confidence": chunk.get("confidence"),
             "reason": chunk.get("reason"),
             "source_quality_weight": chunk["source_quality_weight"],
-            "weighted_contribution": chunk.get("weighted_contribution"),
+            "weighted_contribution": chunk.get("weighted_contribution") or weighted_contribution(chunk),
             "nli_direction": chunk.get("nli_direction"),
             "hallucination_flag": chunk.get("hallucination_flag", False),
             "human_review": chunk.get("human_review", False),
@@ -153,7 +163,22 @@ def build_proposition_object(prop, scoring, classification, retrieval, one_line_
     }
 
 
-def build_documents_list(registry_list, graph_data):
+PASSAGE_FIELDS = [
+    "chunk_id", "citation", "chunk_text", "doc_type", "paragraph_number",
+    "clause_number", "clause_heading", "section_name", "section_heading",
+    "defect_id", "severity", "witness_name", "expert_name", "token_count",
+]
+
+
+def build_documents_list(registry_list, graph_data, all_chunks):
+    # Group every parsed chunk by its document, in document (parse) order.
+    # Excludes the embedding field. Lets the UI show all passages from a document.
+    passages_by_doc = {}
+    for c in all_chunks:
+        passages_by_doc.setdefault(c["doc_id"], []).append(
+            {k: c.get(k) for k in PASSAGE_FIELDS}
+        )
+
     documents = []
     for doc in registry_list:
         graph_node = next(
@@ -161,6 +186,7 @@ def build_documents_list(registry_list, graph_data):
              if n.get("node_type") == "document" and n["id"] == doc["doc_id"]),
             None,
         )
+        passages = passages_by_doc.get(doc["doc_id"], [])
         documents.append({
             "doc_id": doc["doc_id"],
             "doc_title": doc["doc_title"],
@@ -172,6 +198,8 @@ def build_documents_list(registry_list, graph_data):
             "is_evidence_active": graph_node["is_active"] if graph_node else False,
             "dominant_legal_type": graph_node["dominant_legal_type"] if graph_node else "unclassified",
             "colour": graph_node["colour"] if graph_node else "#6B7280",
+            "passage_count": len(passages),
+            "passages": passages,
         })
     return documents
 
@@ -198,6 +226,7 @@ def main():
     graph_data = json.load(open("graph_data.json", encoding="utf-8"))
     registry = json.load(open("registry.json", encoding="utf-8"))
     registry_list = [v for k, v in registry.items() if not k.startswith("_")]
+    all_chunks = json.load(open("chunks_with_embeddings.json", encoding="utf-8"))
 
     propositions_built = []
     validation_failures = 0
@@ -277,7 +306,7 @@ def main():
         "proof_matrix_order": [
             p["proposition_id"] for p in
             sorted(propositions_built, key=lambda x: _allegation_key(x["allegation_number"]))],
-        "documents": build_documents_list(registry_list, graph_data),
+        "documents": build_documents_list(registry_list, graph_data, all_chunks),
         "graph": {
             "document_view": graph_data["document_view"],
             "detailed_view": graph_data["detailed_view"],
