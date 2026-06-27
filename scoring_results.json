@@ -1,0 +1,2045 @@
+[
+  {
+    "proposition_id": "p1",
+    "allegation_number": "1",
+    "proposition_text": "The Claimant (\"Meridian\") is a public limited company and operates a chain of approximately 180 retail stores in the United Kingdom together with an online sales channel.",
+    "legal_element_type": "formation",
+    "importance_weight": 0.6,
+    "proof_score": 1.0,
+    "risk_score": 0.05,
+    "max_possible_score": 4.7,
+    "status": "SUPPORTED",
+    "classification_confidence": "confident",
+    "boundary_distance": 0.4,
+    "retrieval_gap": true,
+    "is_own_evidence_contradiction": false,
+    "chunk_count": 3,
+    "supporting_count": 3,
+    "contradicting_count": 0,
+    "neutral_count": 0,
+    "human_review_count": 0,
+    "citation_audit": {
+      "top_supporting_citation": {
+        "citation": "Okafor WS, para 1",
+        "doc_title": "Witness Statement — Raymond Okafor",
+        "doc_type": "witness_statement",
+        "author_party": "claimant",
+        "score": 2,
+        "confidence": 1.0,
+        "source_quality_weight": 0.8,
+        "verbatim_quote": "Meridian Retail Group plc.",
+        "reason": "This quote explicitly states that Meridian is a 'plc', which directly confirms the proposition's assertion that Meridian is a public limited company.",
+        "weighted_contribution": 1.6
+      },
+      "top_contradicting_citation": null,
+      "most_determinative_citation": {
+        "citation": "Okafor WS, para 1",
+        "doc_title": "Witness Statement — Raymond Okafor",
+        "doc_type": "witness_statement",
+        "author_party": "claimant",
+        "score": 2,
+        "confidence": 1.0,
+        "source_quality_weight": 0.8,
+        "verbatim_quote": "Meridian Retail Group plc.",
+        "reason": "This quote explicitly states that Meridian is a 'plc', which directly confirms the proposition's assertion that Meridian is a public limited company.",
+        "weighted_contribution": 1.6
+      },
+      "own_evidence_citations": [],
+      "all_supporting_citations": [
+        {
+          "citation": "Okafor WS, para 1",
+          "doc_title": "Witness Statement — Raymond Okafor",
+          "doc_type": "witness_statement",
+          "author_party": "claimant",
+          "score": 2,
+          "confidence": 1.0,
+          "source_quality_weight": 0.8,
+          "verbatim_quote": "Meridian Retail Group plc.",
+          "reason": "This quote explicitly states that Meridian is a 'plc', which directly confirms the proposition's assertion that Meridian is a public limited company.",
+          "weighted_contribution": 1.6
+        },
+        {
+          "citation": "Vance WS, para 1",
+          "doc_title": "Witness Statement — Helena Vance",
+          "doc_type": "witness_statement",
+          "author_party": "claimant",
+          "score": 2,
+          "confidence": 1.0,
+          "source_quality_weight": 0.8,
+          "verbatim_quote": "Meridian Retail Group plc",
+          "reason": "This quote directly confirms that Meridian is a public limited company, which is a key part of the proposition.",
+          "weighted_contribution": 1.6
+        },
+        {
+          "citation": "Caldwell Pryce LLP, 20 Jan 2025",
+          "doc_title": "Letter — Notice of Termination",
+          "doc_type": "letter",
+          "author_party": "claimant",
+          "score": 2,
+          "confidence": 1.0,
+          "source_quality_weight": 0.75,
+          "verbatim_quote": "Meridian Retail Group plc",
+          "reason": "The 'plc' designation in the company name directly confirms that Meridian is a public limited company, which is part of the proposition.",
+          "weighted_contribution": 1.5
+        }
+      ],
+      "all_contradicting_citations": [],
+      "neutral_citations": [],
+      "human_review_citations": [],
+      "no_evidence_note": null
+    }
+  },
+  {
+    "proposition_id": "p2",
+    "allegation_number": "2",
+    "proposition_text": "The Defendant (\"TechFlow\") is a limited company which designs, supplies and implements retail software systems.",
+    "legal_element_type": "formation",
+    "importance_weight": 0.6,
+    "proof_score": 0.975,
+    "risk_score": 0.05,
+    "max_possible_score": 3.0,
+    "status": "SUPPORTED",
+    "classification_confidence": "confident",
+    "boundary_distance": 0.375,
+    "retrieval_gap": false,
+    "is_own_evidence_contradiction": false,
+    "chunk_count": 5,
+    "supporting_count": 2,
+    "contradicting_count": 0,
+    "neutral_count": 3,
+    "human_review_count": 0,
+    "citation_audit": {
+      "top_supporting_citation": {
+        "citation": "Harborne Quinn LLP, 7 Feb 2025",
+        "doc_title": "Letter — TechFlow Response",
+        "doc_type": "letter",
+        "author_party": "defendant",
+        "score": 2,
+        "confidence": 1.0,
+        "source_quality_weight": 0.75,
+        "verbatim_quote": "TechFlow Solutions Limited",
+        "reason": "This quote directly identifies the defendant as 'TechFlow Solutions Limited', which confirms the proposition that TechFlow is a limited company.",
+        "weighted_contribution": 1.5
+      },
+      "top_contradicting_citation": null,
+      "most_determinative_citation": {
+        "citation": "Harborne Quinn LLP, 7 Feb 2025",
+        "doc_title": "Letter — TechFlow Response",
+        "doc_type": "letter",
+        "author_party": "defendant",
+        "score": 2,
+        "confidence": 1.0,
+        "source_quality_weight": 0.75,
+        "verbatim_quote": "TechFlow Solutions Limited",
+        "reason": "This quote directly identifies the defendant as 'TechFlow Solutions Limited', which confirms the proposition that TechFlow is a limited company.",
+        "weighted_contribution": 1.5
+      },
+      "own_evidence_citations": [],
+      "all_supporting_citations": [
+        {
+          "citation": "Harborne Quinn LLP, 7 Feb 2025",
+          "doc_title": "Letter — TechFlow Response",
+          "doc_type": "letter",
+          "author_party": "defendant",
+          "score": 2,
+          "confidence": 1.0,
+          "source_quality_weight": 0.75,
+          "verbatim_quote": "TechFlow Solutions Limited",
+          "reason": "This quote directly identifies the defendant as 'TechFlow Solutions Limited', which confirms the proposition that TechFlow is a limited company.",
+          "weighted_contribution": 1.5
+        },
+        {
+          "citation": "Caldwell Pryce LLP, 20 Jan 2025",
+          "doc_title": "Letter — Notice of Termination",
+          "doc_type": "letter",
+          "author_party": "claimant",
+          "score": 2,
+          "confidence": 0.95,
+          "source_quality_weight": 0.75,
+          "verbatim_quote": "your design, build and implementation of the inventory and EPOS platform",
+          "reason": "This quote directly states that the recipient (the defendant) performs design, build, and implementation of retail software systems, which directly supports the activities described in the proposition.",
+          "weighted_contribution": 1.425
+        }
+      ],
+      "all_contradicting_citations": [],
+      "neutral_citations": [
+        {
+          "citation": "Nair WS, para 1",
+          "doc_title": "Witness Statement — Priya Nair",
+          "reason": "The quote only confirms the existence of a contract involving TechFlow, providing no information about TechFlow's legal structure or business activities."
+        },
+        {
+          "citation": "Whitfield Expert Report, para 1",
+          "doc_title": "Expert Report — Dr Alan Whitfield (IT)",
+          "reason": "The chunk discusses an expert's opinion on enterprise retail IT systems and a platform, which is the general subject area of the proposition, but it does not mention the Defendant (\"TechFlow\") or its specific business activities."
+        },
+        {
+          "citation": "Okafor WS, para 1",
+          "doc_title": "Witness Statement — Raymond Okafor",
+          "reason": "The quote identifies the witness and their role at a different company, providing no information about TechFlow's legal status or business activities."
+        }
+      ],
+      "human_review_citations": [],
+      "no_evidence_note": null
+    }
+  },
+  {
+    "proposition_id": "p3",
+    "allegation_number": "3",
+    "proposition_text": "By a written Master Services Agreement dated 14 March 2024 (\"the MSA\"), TechFlow agreed to design, build, configure and implement for Meridian a cloud-based inventory management and electronic point-of-sale platform (\"the Platform\").",
+    "legal_element_type": "formation",
+    "importance_weight": 0.6,
+    "proof_score": 0.7288,
+    "risk_score": 0.0814,
+    "max_possible_score": 8.5,
+    "status": "SUPPORTED",
+    "classification_confidence": "moderate",
+    "boundary_distance": 0.1288,
+    "retrieval_gap": false,
+    "is_own_evidence_contradiction": false,
+    "chunk_count": 5,
+    "supporting_count": 5,
+    "contradicting_count": 0,
+    "neutral_count": 0,
+    "human_review_count": 0,
+    "citation_audit": {
+      "top_supporting_citation": {
+        "citation": "Caldwell Pryce LLP, 20 Jan 2025",
+        "doc_title": "Letter — Notice of Termination",
+        "doc_type": "letter",
+        "author_party": "claimant",
+        "score": 2,
+        "confidence": 1.0,
+        "source_quality_weight": 0.75,
+        "verbatim_quote": "Master Services Agreement dated 14 March 2024",
+        "reason": "This quote directly confirms the existence and date of the Master Services Agreement as described in the proposition.",
+        "weighted_contribution": 1.5
+      },
+      "top_contradicting_citation": null,
+      "most_determinative_citation": {
+        "citation": "Caldwell Pryce LLP, 20 Jan 2025",
+        "doc_title": "Letter — Notice of Termination",
+        "doc_type": "letter",
+        "author_party": "claimant",
+        "score": 2,
+        "confidence": 1.0,
+        "source_quality_weight": 0.75,
+        "verbatim_quote": "Master Services Agreement dated 14 March 2024",
+        "reason": "This quote directly confirms the existence and date of the Master Services Agreement as described in the proposition.",
+        "weighted_contribution": 1.5
+      },
+      "own_evidence_citations": [],
+      "all_supporting_citations": [
+        {
+          "citation": "Caldwell Pryce LLP, 20 Jan 2025",
+          "doc_title": "Letter — Notice of Termination",
+          "doc_type": "letter",
+          "author_party": "claimant",
+          "score": 2,
+          "confidence": 1.0,
+          "source_quality_weight": 0.75,
+          "verbatim_quote": "Master Services Agreement dated 14 March 2024",
+          "reason": "This quote directly confirms the existence and date of the Master Services Agreement as described in the proposition.",
+          "weighted_contribution": 1.5
+        },
+        {
+          "citation": "Caldwell Pryce LLP, 20 Jan 2025",
+          "doc_title": "Letter — Notice of Termination",
+          "doc_type": "letter",
+          "author_party": "claimant",
+          "score": 2,
+          "confidence": 1.0,
+          "source_quality_weight": 0.75,
+          "verbatim_quote": "We write in connection with your design, build and implementation of the inventory and EPOS platform under the above Agreement (\"the MSA\").",
+          "reason": "The quote explicitly refers to an \"MSA\" under which the recipient (implicitly TechFlow) undertook the \"design, build and implementation of the inventory and EPOS platform\" for Meridian, directly confirming the existence of such an agreement and the services provided.",
+          "weighted_contribution": 1.5
+        },
+        {
+          "citation": "Nair WS, para 2",
+          "doc_title": "Witness Statement — Priya Nair",
+          "doc_type": "witness_statement",
+          "author_party": "claimant",
+          "score": 2,
+          "confidence": 0.9,
+          "source_quality_weight": 0.8,
+          "verbatim_quote": "I signed the Master Services Agreement on Meridian’s behalf on 14 March 2024",
+          "reason": "This quote directly confirms the existence of a Master Services Agreement, its signing date, and Meridian's involvement, which are key factual assertions within the proposition.",
+          "weighted_contribution": 1.44
+        },
+        {
+          "citation": "UAT Acceptance Certificate, 12 Nov 2024",
+          "doc_title": "UAT Acceptance Certificate",
+          "doc_type": "record",
+          "author_party": "claimant",
+          "score": 1,
+          "confidence": 0.9,
+          "source_quality_weight": 1.0,
+          "verbatim_quote": "User Acceptance Testing of Phase 1 of the Platform (core inventory and EPOS) was carried out between 21 October and 11 November 2024. Meridian confirms that Phase 1 has passed User Acceptance Testing and is accepted",
+          "reason": "This quote indicates that a platform matching the description in the proposition is being developed and accepted, which is consistent with an agreement to implement it, although it does not explicitly mention the Master Services Agreement or TechFlow's specific role.",
+          "weighted_contribution": 0.9
+        },
+        {
+          "citation": "Greenhalgh Expert Report, para 2",
+          "doc_title": "Expert Report — Fiona Greenhalgh FCA (Quantum)",
+          "doc_type": "expert_report",
+          "author_party": "claimant",
+          "score": 1,
+          "confidence": 0.9,
+          "source_quality_weight": 0.95,
+          "verbatim_quote": "the sums invoiced and paid under the Master Services Agreement",
+          "reason": "This quote indicates that a Master Services Agreement existed and was acted upon, which is consistent with the proposition that such an agreement was made.",
+          "weighted_contribution": 0.855
+        }
+      ],
+      "all_contradicting_citations": [],
+      "neutral_citations": [],
+      "human_review_citations": [],
+      "no_evidence_note": null
+    }
+  },
+  {
+    "proposition_id": "p4",
+    "allegation_number": "4",
+    "proposition_text": "The MSA incorporated a Statement of Work (\"the SOW\") at Schedule 1, which set out the scope of the works, the implementation plan and the milestones.",
+    "legal_element_type": "formation",
+    "importance_weight": 0.6,
+    "proof_score": 0.7064,
+    "risk_score": 0.0881,
+    "max_possible_score": 7.8,
+    "status": "SUPPORTED",
+    "classification_confidence": "moderate",
+    "boundary_distance": 0.1064,
+    "retrieval_gap": false,
+    "is_own_evidence_contradiction": false,
+    "chunk_count": 4,
+    "supporting_count": 4,
+    "contradicting_count": 0,
+    "neutral_count": 0,
+    "human_review_count": 0,
+    "citation_audit": {
+      "top_supporting_citation": {
+        "citation": "MSA, clause 1.1",
+        "doc_title": "Master Services Agreement",
+        "doc_type": "contract",
+        "author_party": "both",
+        "score": 2,
+        "confidence": 1.0,
+        "source_quality_weight": 1.0,
+        "verbatim_quote": "in accordance with the Statement of Work set out at Schedule 1 (the \"SOW\")",
+        "reason": "The quote directly confirms that the Statement of Work, referred to as \"the SOW,\" is set out at Schedule 1 and governs the execution of the works, thereby supporting its incorporation and role in defining the scope.",
+        "weighted_contribution": 2.0
+      },
+      "top_contradicting_citation": null,
+      "most_determinative_citation": {
+        "citation": "MSA, clause 1.1",
+        "doc_title": "Master Services Agreement",
+        "doc_type": "contract",
+        "author_party": "both",
+        "score": 2,
+        "confidence": 1.0,
+        "source_quality_weight": 1.0,
+        "verbatim_quote": "in accordance with the Statement of Work set out at Schedule 1 (the \"SOW\")",
+        "reason": "The quote directly confirms that the Statement of Work, referred to as \"the SOW,\" is set out at Schedule 1 and governs the execution of the works, thereby supporting its incorporation and role in defining the scope.",
+        "weighted_contribution": 2.0
+      },
+      "own_evidence_citations": [],
+      "all_supporting_citations": [
+        {
+          "citation": "MSA, clause 1.1",
+          "doc_title": "Master Services Agreement",
+          "doc_type": "contract",
+          "author_party": "both",
+          "score": 2,
+          "confidence": 1.0,
+          "source_quality_weight": 1.0,
+          "verbatim_quote": "in accordance with the Statement of Work set out at Schedule 1 (the \"SOW\")",
+          "reason": "The quote directly confirms that the Statement of Work, referred to as \"the SOW,\" is set out at Schedule 1 and governs the execution of the works, thereby supporting its incorporation and role in defining the scope.",
+          "weighted_contribution": 2.0
+        },
+        {
+          "citation": "SOW, clause 2.1",
+          "doc_title": "Statement of Work (SOW-01)",
+          "doc_type": "contract",
+          "author_party": "both",
+          "score": 2,
+          "confidence": 0.9,
+          "source_quality_weight": 1.0,
+          "verbatim_quote": "The detailed implementation plan is a planning estimate and is subject to the change control procedure in clause 3 of the MSA.",
+          "reason": "This quote, originating from the Statement of Work, directly discusses the detailed implementation plan and its connection to the MSA, thereby supporting the proposition that the SOW set out the implementation plan and was incorporated into the MSA.",
+          "weighted_contribution": 1.8
+        },
+        {
+          "citation": "MSA, clause 3.1",
+          "doc_title": "Master Services Agreement",
+          "doc_type": "contract",
+          "author_party": "both",
+          "score": 1,
+          "confidence": 0.9,
+          "source_quality_weight": 1.0,
+          "verbatim_quote": "The Supplier shall use reasonable endeavours to achieve the target go-live date stated in the SOW. The parties acknowledge that the implementation timetable is a planning estimate and may be adjusted through the change control procedure.",
+          "reason": "The quote refers to a 'target go-live date stated in the SOW' and an 'implementation timetable,' which is consistent with the SOW setting out an implementation plan and milestones.",
+          "weighted_contribution": 0.9
+        },
+        {
+          "citation": "Vance to Reilly, 21 Aug 2024",
+          "doc_title": "Email — Loyalty Module Change Request",
+          "doc_type": "email",
+          "author_party": "both",
+          "score": 1,
+          "confidence": 0.9,
+          "source_quality_weight": 0.9,
+          "verbatim_quote": "I appreciate this was not in the original SOW",
+          "reason": "This quote indicates the existence of an 'original SOW' that defined the scope of work, which is consistent with the proposition that an SOW existed and set out the scope of works.",
+          "weighted_contribution": 0.81
+        }
+      ],
+      "all_contradicting_citations": [],
+      "neutral_citations": [],
+      "human_review_citations": [],
+      "no_evidence_note": null
+    }
+  },
+  {
+    "proposition_id": "p5",
+    "allegation_number": "5",
+    "proposition_text": "The total charges payable under the MSA were £2,400,000 (excluding VAT), payable against milestones.",
+    "legal_element_type": "formation",
+    "importance_weight": 0.6,
+    "proof_score": 0.322,
+    "risk_score": 0.2034,
+    "max_possible_score": 5.9,
+    "status": "PARTIALLY_SUPPORTED",
+    "classification_confidence": "moderate",
+    "boundary_distance": 0.122,
+    "retrieval_gap": false,
+    "is_own_evidence_contradiction": false,
+    "chunk_count": 6,
+    "supporting_count": 2,
+    "contradicting_count": 1,
+    "neutral_count": 3,
+    "human_review_count": 0,
+    "citation_audit": {
+      "top_supporting_citation": {
+        "citation": "MSA, clause 2.1",
+        "doc_title": "Master Services Agreement",
+        "doc_type": "contract",
+        "author_party": "both",
+        "score": 2,
+        "confidence": 1.0,
+        "source_quality_weight": 1.0,
+        "verbatim_quote": "The total charges for the Services are £2,400,000 (excluding VAT), payable against the milestones set out in the SOW and as may be varied by agreement in writing.",
+        "reason": "This quote directly states the total charges and the payment method, which precisely matches the proposition.",
+        "weighted_contribution": 2.0
+      },
+      "top_contradicting_citation": {
+        "citation": "Greenhalgh Expert Report, para 6",
+        "doc_title": "Expert Report — Fiona Greenhalgh FCA (Quantum)",
+        "doc_type": "expert_report",
+        "author_party": "claimant",
+        "score": -2,
+        "confidence": 1.0,
+        "source_quality_weight": 0.95,
+        "verbatim_quote": "charges paid (approximately £1,800,000)",
+        "reason": "The quoted text states an approximate amount for charges paid that is different from the amount specified in the proposition.",
+        "weighted_contribution": 1.9
+      },
+      "most_determinative_citation": {
+        "citation": "MSA, clause 2.1",
+        "doc_title": "Master Services Agreement",
+        "doc_type": "contract",
+        "author_party": "both",
+        "score": 2,
+        "confidence": 1.0,
+        "source_quality_weight": 1.0,
+        "verbatim_quote": "The total charges for the Services are £2,400,000 (excluding VAT), payable against the milestones set out in the SOW and as may be varied by agreement in writing.",
+        "reason": "This quote directly states the total charges and the payment method, which precisely matches the proposition.",
+        "weighted_contribution": 2.0
+      },
+      "own_evidence_citations": [
+        {
+          "citation": "Greenhalgh Expert Report, para 6",
+          "doc_title": "Expert Report — Fiona Greenhalgh FCA (Quantum)",
+          "doc_type": "expert_report",
+          "author_party": "claimant",
+          "score": -2,
+          "confidence": 1.0,
+          "source_quality_weight": 0.95,
+          "verbatim_quote": "charges paid (approximately £1,800,000)",
+          "reason": "The quoted text states an approximate amount for charges paid that is different from the amount specified in the proposition.",
+          "weighted_contribution": 1.9
+        }
+      ],
+      "all_supporting_citations": [
+        {
+          "citation": "MSA, clause 2.1",
+          "doc_title": "Master Services Agreement",
+          "doc_type": "contract",
+          "author_party": "both",
+          "score": 2,
+          "confidence": 1.0,
+          "source_quality_weight": 1.0,
+          "verbatim_quote": "The total charges for the Services are £2,400,000 (excluding VAT), payable against the milestones set out in the SOW and as may be varied by agreement in writing.",
+          "reason": "This quote directly states the total charges and the payment method, which precisely matches the proposition.",
+          "weighted_contribution": 2.0
+        },
+        {
+          "citation": "Deed of Variation No. 1, clause 1",
+          "doc_title": "Deed of Variation No. 1",
+          "doc_type": "amendment",
+          "author_party": "both",
+          "score": 2,
+          "confidence": 0.9,
+          "source_quality_weight": 1.0,
+          "verbatim_quote": "the charges are payable: 20% on M1, 20% on M2, 30% on M3 and 30% on M4.",
+          "reason": "This quote explicitly states that charges are payable against specific milestones, directly confirming the 'payable against milestones' aspect of the proposition.",
+          "weighted_contribution": 1.8
+        }
+      ],
+      "all_contradicting_citations": [
+        {
+          "citation": "Greenhalgh Expert Report, para 6",
+          "doc_title": "Expert Report — Fiona Greenhalgh FCA (Quantum)",
+          "doc_type": "expert_report",
+          "author_party": "claimant",
+          "score": -2,
+          "confidence": 1.0,
+          "source_quality_weight": 0.95,
+          "verbatim_quote": "charges paid (approximately £1,800,000)",
+          "reason": "The quoted text states an approximate amount for charges paid that is different from the amount specified in the proposition.",
+          "weighted_contribution": 1.9
+        }
+      ],
+      "neutral_citations": [
+        {
+          "citation": "Change Order No. 3, clause 3.1",
+          "doc_title": "Change Order No. 3",
+          "reason": "The chunk specifies an additional charge and its payment trigger, but it does not confirm or deny the total charges or the general payment against milestones as stated in the proposition."
+        },
+        {
+          "citation": "Greenhalgh Expert Report, para 2",
+          "doc_title": "Expert Report — Fiona Greenhalgh FCA (Quantum)",
+          "reason": "This quote confirms that £1,800,000 was invoiced and paid under the MSA, but it does not confirm or deny that the total charges payable were £2,400,000 or that they were payable against milestones."
+        },
+        {
+          "citation": "Order Form (Phase 1)",
+          "doc_title": "Order Form (Phase 1)",
+          "reason": "This quote specifies a charge of £1,500,000 for Phase 1, which is a component of a potential total but does not confirm the proposition's stated total of £2,400,000 or the payment against milestones."
+        }
+      ],
+      "human_review_citations": [],
+      "no_evidence_note": null
+    }
+  },
+  {
+    "proposition_id": "p6",
+    "allegation_number": "6",
+    "proposition_text": "It was an express term of the MSA and the SOW that the go-live date for the Platform was fixed at 1 October 2024, and that time was of the essence in respect of that date.",
+    "legal_element_type": "timetable",
+    "importance_weight": 0.75,
+    "proof_score": -1.0,
+    "risk_score": 0.75,
+    "max_possible_score": 13.8,
+    "status": "STRONGLY_CONTRADICTED",
+    "classification_confidence": "confident",
+    "boundary_distance": 0.4,
+    "retrieval_gap": false,
+    "is_own_evidence_contradiction": false,
+    "chunk_count": 8,
+    "supporting_count": 0,
+    "contradicting_count": 8,
+    "neutral_count": 0,
+    "human_review_count": 0,
+    "citation_audit": {
+      "top_supporting_citation": null,
+      "top_contradicting_citation": {
+        "citation": "SOW, clause 2.1",
+        "doc_title": "Statement of Work (SOW-01)",
+        "doc_type": "contract",
+        "author_party": "both",
+        "score": -2,
+        "confidence": 1.0,
+        "source_quality_weight": 1.0,
+        "verbatim_quote": "The go-live date of 1 October 2024 is a target date.",
+        "reason": "This quote states that the go-live date is a 'target date,' which directly contradicts the proposition that the date was 'fixed' and that 'time was of the essence.'",
+        "weighted_contribution": 2.0
+      },
+      "most_determinative_citation": {
+        "citation": "SOW, clause 2.1",
+        "doc_title": "Statement of Work (SOW-01)",
+        "doc_type": "contract",
+        "author_party": "both",
+        "score": -2,
+        "confidence": 1.0,
+        "source_quality_weight": 1.0,
+        "verbatim_quote": "The go-live date of 1 October 2024 is a target date.",
+        "reason": "This quote states that the go-live date is a 'target date,' which directly contradicts the proposition that the date was 'fixed' and that 'time was of the essence.'",
+        "weighted_contribution": 2.0
+      },
+      "own_evidence_citations": [
+        {
+          "citation": "Nair WS, para 3",
+          "doc_title": "Witness Statement — Priya Nair",
+          "doc_type": "witness_statement",
+          "author_party": "claimant",
+          "score": -2,
+          "confidence": 1.0,
+          "source_quality_weight": 0.8,
+          "verbatim_quote": "it revised the go-live date from 1 October to 18 November 2024",
+          "reason": "This quote indicates that the go-live date of 1 October was changed, directly contradicting the proposition that the date was fixed.",
+          "weighted_contribution": 1.6
+        },
+        {
+          "citation": "Vance WS, para 3",
+          "doc_title": "Witness Statement — Helena Vance",
+          "doc_type": "witness_statement",
+          "author_party": "claimant",
+          "score": -2,
+          "confidence": 1.0,
+          "source_quality_weight": 0.8,
+          "verbatim_quote": "which also moved the go-live date to 18 November 2024",
+          "reason": "This quote directly states that the go-live date was moved, contradicting the proposition that the go-live date was fixed at 1 October 2024.",
+          "weighted_contribution": 1.6
+        }
+      ],
+      "all_supporting_citations": [],
+      "all_contradicting_citations": [
+        {
+          "citation": "SOW, clause 2.1",
+          "doc_title": "Statement of Work (SOW-01)",
+          "doc_type": "contract",
+          "author_party": "both",
+          "score": -2,
+          "confidence": 1.0,
+          "source_quality_weight": 1.0,
+          "verbatim_quote": "The go-live date of 1 October 2024 is a target date.",
+          "reason": "This quote states that the go-live date is a 'target date,' which directly contradicts the proposition that the date was 'fixed' and that 'time was of the essence.'",
+          "weighted_contribution": 2.0
+        },
+        {
+          "citation": "Change Order No. 3, clause 2.1",
+          "doc_title": "Change Order No. 3",
+          "doc_type": "amendment",
+          "author_party": "both",
+          "score": -2,
+          "confidence": 1.0,
+          "source_quality_weight": 1.0,
+          "verbatim_quote": "the go-live date is revised from 1 October 2024 to 18 November 2024",
+          "reason": "This quote directly states that the go-live date was changed from 1 October 2024, which contradicts the proposition that the date was fixed at 1 October 2024.",
+          "weighted_contribution": 2.0
+        },
+        {
+          "citation": "Vance to Reilly, 21 Aug 2024",
+          "doc_title": "Email — Loyalty Module Change Request",
+          "doc_type": "email",
+          "author_party": "both",
+          "score": -2,
+          "confidence": 1.0,
+          "source_quality_weight": 0.9,
+          "verbatim_quote": "We accept there may be a knock-on to the go-live date and we are willing to discuss a revised date to accommodate it.",
+          "reason": "This quote directly contradicts the proposition by indicating a willingness to discuss and revise the go-live date, implying it was not fixed and time was not of the essence.",
+          "weighted_contribution": 1.8
+        },
+        {
+          "citation": "Reilly to Vance, 27 Aug 2024",
+          "doc_title": "Email — Loyalty Module Change Request",
+          "doc_type": "email",
+          "author_party": "both",
+          "score": -2,
+          "confidence": 1.0,
+          "source_quality_weight": 0.9,
+          "verbatim_quote": "we will need to move go-live from 1 October to 18 November 2024",
+          "reason": "This quote indicates a proposed change to the 1 October go-live date, which directly contradicts the proposition that the date was fixed.",
+          "weighted_contribution": 1.8
+        },
+        {
+          "citation": "Nair WS, para 3",
+          "doc_title": "Witness Statement — Priya Nair",
+          "doc_type": "witness_statement",
+          "author_party": "claimant",
+          "score": -2,
+          "confidence": 1.0,
+          "source_quality_weight": 0.8,
+          "verbatim_quote": "it revised the go-live date from 1 October to 18 November 2024",
+          "reason": "This quote indicates that the go-live date of 1 October was changed, directly contradicting the proposition that the date was fixed.",
+          "weighted_contribution": 1.6
+        },
+        {
+          "citation": "Vance WS, para 3",
+          "doc_title": "Witness Statement — Helena Vance",
+          "doc_type": "witness_statement",
+          "author_party": "claimant",
+          "score": -2,
+          "confidence": 1.0,
+          "source_quality_weight": 0.8,
+          "verbatim_quote": "which also moved the go-live date to 18 November 2024",
+          "reason": "This quote directly states that the go-live date was moved, contradicting the proposition that the go-live date was fixed at 1 October 2024.",
+          "weighted_contribution": 1.6
+        },
+        {
+          "citation": "Harborne Quinn LLP, 7 Feb 2025",
+          "doc_title": "Letter — TechFlow Response",
+          "doc_type": "letter",
+          "author_party": "defendant",
+          "score": -2,
+          "confidence": 1.0,
+          "source_quality_weight": 0.75,
+          "verbatim_quote": "The go-live date was a target, not a fixed date. It moved from 1 October to 18 November 2024",
+          "reason": "The quoted text directly states that the go-live date was a target, not fixed, and that it moved from 1 October, which unambiguously contradicts the proposition that the go-live date was fixed at 1 October.",
+          "weighted_contribution": 1.5
+        },
+        {
+          "citation": "Harborne Quinn LLP, 7 Feb 2025",
+          "doc_title": "Letter — TechFlow Response",
+          "doc_type": "letter",
+          "author_party": "defendant",
+          "score": -2,
+          "confidence": 1.0,
+          "source_quality_weight": 0.75,
+          "verbatim_quote": "Our client expressly recommended, in writing on 24 October 2024, that go-live be deferred to January 2025 to avoid the peak trading period. Your client’s Programme Director rejected that recommendation and instructed our client to proceed on 18 November 2024, accepting the associated risk.",
+          "reason": "This quote describes discussions and decisions about deferring or proceeding with go-live on dates after 1 October 2024, which directly contradicts the proposition that 1 October 2024 was a fixed, time-of-the-essence go-live date.",
+          "weighted_contribution": 1.5
+        }
+      ],
+      "neutral_citations": [],
+      "human_review_citations": [],
+      "no_evidence_note": null
+    }
+  },
+  {
+    "proposition_id": "p7",
+    "allegation_number": "7",
+    "proposition_text": "At a meeting on or about 5 February 2024, prior to entering into the MSA, TechFlow by its Sales Director Mr Daniel Frost orally represented to Meridian that the Platform would reliably support at least 10,000 concurrent transactions (\"the Representation\"). Meridian entered into the MSA in reliance upon the Representation. The Representation was false: the Platform was incapable of supporting that volume.",
+    "legal_element_type": "misrepresentation",
+    "importance_weight": 0.9,
+    "proof_score": 0.4,
+    "risk_score": 0.27,
+    "max_possible_score": 1.6,
+    "status": "PARTIALLY_SUPPORTED",
+    "classification_confidence": "confident",
+    "boundary_distance": 0.2,
+    "retrieval_gap": true,
+    "is_own_evidence_contradiction": false,
+    "chunk_count": 4,
+    "supporting_count": 1,
+    "contradicting_count": 0,
+    "neutral_count": 3,
+    "human_review_count": 0,
+    "citation_audit": {
+      "top_supporting_citation": {
+        "citation": "Nair WS, para 5",
+        "doc_title": "Witness Statement — Priya Nair",
+        "doc_type": "witness_statement",
+        "author_party": "claimant",
+        "score": 1,
+        "confidence": 0.8,
+        "source_quality_weight": 0.8,
+        "verbatim_quote": "because of the problems we experienced after go-live",
+        "reason": "This quote indicates that Meridian experienced issues with the platform after it went live, which is consistent with the proposition that the platform was incapable of supporting the promised transaction volume and the representation was false.",
+        "weighted_contribution": 0.64
+      },
+      "top_contradicting_citation": null,
+      "most_determinative_citation": {
+        "citation": "Nair WS, para 5",
+        "doc_title": "Witness Statement — Priya Nair",
+        "doc_type": "witness_statement",
+        "author_party": "claimant",
+        "score": 1,
+        "confidence": 0.8,
+        "source_quality_weight": 0.8,
+        "verbatim_quote": "because of the problems we experienced after go-live",
+        "reason": "This quote indicates that Meridian experienced issues with the platform after it went live, which is consistent with the proposition that the platform was incapable of supporting the promised transaction volume and the representation was false.",
+        "weighted_contribution": 0.64
+      },
+      "own_evidence_citations": [],
+      "all_supporting_citations": [
+        {
+          "citation": "Nair WS, para 5",
+          "doc_title": "Witness Statement — Priya Nair",
+          "doc_type": "witness_statement",
+          "author_party": "claimant",
+          "score": 1,
+          "confidence": 0.8,
+          "source_quality_weight": 0.8,
+          "verbatim_quote": "because of the problems we experienced after go-live",
+          "reason": "This quote indicates that Meridian experienced issues with the platform after it went live, which is consistent with the proposition that the platform was incapable of supporting the promised transaction volume and the representation was false.",
+          "weighted_contribution": 0.64
+        }
+      ],
+      "all_contradicting_citations": [],
+      "neutral_citations": [
+        {
+          "citation": "Vance WS, para 1",
+          "doc_title": "Witness Statement — Helena Vance",
+          "reason": "This quote establishes the witness's role and responsibility for the Platform implementation programme, which is related to the subject matter of the proposition, but it does not provide any information about the alleged representation or the platform's capabilities."
+        },
+        {
+          "citation": "Deed of Variation No. 1, clause 2",
+          "doc_title": "Deed of Variation No. 1",
+          "reason": "This clause confirms the continued validity of the Master Services Agreement (MSA), which is the contract mentioned in the proposition, but it provides no information about the alleged oral representation, its content, or its truth."
+        },
+        {
+          "citation": "UAT Acceptance Certificate, 12 Nov 2024",
+          "doc_title": "UAT Acceptance Certificate",
+          "reason": "This quote confirms the acceptance of a phase of the platform after UAT but does not provide information about the platform's capacity for 10,000 concurrent transactions or the alleged oral representation."
+        }
+      ],
+      "human_review_citations": [],
+      "no_evidence_note": null
+    }
+  },
+  {
+    "proposition_id": "p8",
+    "allegation_number": "8",
+    "proposition_text": "In breach of the MSA, TechFlow delivered the Platform late. The Platform did not go live until 18 November 2024, some seven weeks after the contractual go-live date.",
+    "legal_element_type": "timetable",
+    "importance_weight": 0.75,
+    "proof_score": 0.3191,
+    "risk_score": 0.2553,
+    "max_possible_score": 4.7,
+    "status": "PARTIALLY_SUPPORTED",
+    "classification_confidence": "moderate",
+    "boundary_distance": 0.1191,
+    "retrieval_gap": true,
+    "is_own_evidence_contradiction": false,
+    "chunk_count": 3,
+    "supporting_count": 2,
+    "contradicting_count": 1,
+    "neutral_count": 0,
+    "human_review_count": 0,
+    "citation_audit": {
+      "top_supporting_citation": {
+        "citation": "Okafor WS, para 2",
+        "doc_title": "Witness Statement — Raymond Okafor",
+        "doc_type": "witness_statement",
+        "author_party": "claimant",
+        "score": 2,
+        "confidence": 1.0,
+        "source_quality_weight": 0.8,
+        "verbatim_quote": "The new platform went live on 18 November 2024",
+        "reason": "This quote directly confirms the specific go-live date of the platform as stated in the proposition.",
+        "weighted_contribution": 1.6
+      },
+      "top_contradicting_citation": {
+        "citation": "Vance WS, para 4",
+        "doc_title": "Witness Statement — Helena Vance",
+        "doc_type": "witness_statement",
+        "author_party": "claimant",
+        "score": -2,
+        "confidence": 1.0,
+        "source_quality_weight": 0.8,
+        "verbatim_quote": "I decided that we should go live on 18 November 2024. The board was firm that we needed the platform live for peak trading, and I took the decision to proceed despite TechFlow’s advice.",
+        "reason": "The quote states that the claimant decided the 18 November 2024 go-live date despite TechFlow's advice to delay until January 2025, which contradicts the proposition that TechFlow was responsible for the platform being delivered late on that date.",
+        "weighted_contribution": 1.6
+      },
+      "most_determinative_citation": {
+        "citation": "Okafor WS, para 2",
+        "doc_title": "Witness Statement — Raymond Okafor",
+        "doc_type": "witness_statement",
+        "author_party": "claimant",
+        "score": 2,
+        "confidence": 1.0,
+        "source_quality_weight": 0.8,
+        "verbatim_quote": "The new platform went live on 18 November 2024",
+        "reason": "This quote directly confirms the specific go-live date of the platform as stated in the proposition.",
+        "weighted_contribution": 1.6
+      },
+      "own_evidence_citations": [
+        {
+          "citation": "Vance WS, para 4",
+          "doc_title": "Witness Statement — Helena Vance",
+          "doc_type": "witness_statement",
+          "author_party": "claimant",
+          "score": -2,
+          "confidence": 1.0,
+          "source_quality_weight": 0.8,
+          "verbatim_quote": "I decided that we should go live on 18 November 2024. The board was firm that we needed the platform live for peak trading, and I took the decision to proceed despite TechFlow’s advice.",
+          "reason": "The quote states that the claimant decided the 18 November 2024 go-live date despite TechFlow's advice to delay until January 2025, which contradicts the proposition that TechFlow was responsible for the platform being delivered late on that date.",
+          "weighted_contribution": 1.6
+        }
+      ],
+      "all_supporting_citations": [
+        {
+          "citation": "Okafor WS, para 2",
+          "doc_title": "Witness Statement — Raymond Okafor",
+          "doc_type": "witness_statement",
+          "author_party": "claimant",
+          "score": 2,
+          "confidence": 1.0,
+          "source_quality_weight": 0.8,
+          "verbatim_quote": "The new platform went live on 18 November 2024",
+          "reason": "This quote directly confirms the specific go-live date of the platform as stated in the proposition.",
+          "weighted_contribution": 1.6
+        },
+        {
+          "citation": "Caldwell Pryce LLP, 20 Jan 2025",
+          "doc_title": "Letter — Notice of Termination",
+          "doc_type": "letter",
+          "author_party": "claimant",
+          "score": 2,
+          "confidence": 1.0,
+          "source_quality_weight": 0.75,
+          "verbatim_quote": "Our client’s position is that you are in repudiatory breach of the MSA. In particular: (i) you delivered the Platform late; (ii) following go-live on 18 November 2024",
+          "reason": "This quote directly states the client's position that the platform was delivered late and specifies the go-live date as 18 November 2024, which directly supports the proposition's claims.",
+          "weighted_contribution": 1.5
+        }
+      ],
+      "all_contradicting_citations": [
+        {
+          "citation": "Vance WS, para 4",
+          "doc_title": "Witness Statement — Helena Vance",
+          "doc_type": "witness_statement",
+          "author_party": "claimant",
+          "score": -2,
+          "confidence": 1.0,
+          "source_quality_weight": 0.8,
+          "verbatim_quote": "I decided that we should go live on 18 November 2024. The board was firm that we needed the platform live for peak trading, and I took the decision to proceed despite TechFlow’s advice.",
+          "reason": "The quote states that the claimant decided the 18 November 2024 go-live date despite TechFlow's advice to delay until January 2025, which contradicts the proposition that TechFlow was responsible for the platform being delivered late on that date.",
+          "weighted_contribution": 1.6
+        }
+      ],
+      "neutral_citations": [],
+      "human_review_citations": [],
+      "no_evidence_note": null
+    }
+  },
+  {
+    "proposition_id": "p9",
+    "allegation_number": "9",
+    "proposition_text": "Meridian did not at any time request any change to the agreed scope of the works. All delay was caused by TechFlow’s failure to allocate adequate and competent resources to the project.",
+    "legal_element_type": "scope_change",
+    "importance_weight": 0.85,
+    "proof_score": -0.6424,
+    "risk_score": 0.698,
+    "max_possible_score": 8.5,
+    "status": "STRONGLY_CONTRADICTED",
+    "classification_confidence": "borderline",
+    "boundary_distance": 0.0424,
+    "retrieval_gap": false,
+    "is_own_evidence_contradiction": false,
+    "chunk_count": 8,
+    "supporting_count": 1,
+    "contradicting_count": 4,
+    "neutral_count": 3,
+    "human_review_count": 0,
+    "citation_audit": {
+      "top_supporting_citation": {
+        "citation": "Vance WS, para 7",
+        "doc_title": "Witness Statement — Helena Vance",
+        "doc_type": "witness_statement",
+        "author_party": "claimant",
+        "score": 2,
+        "confidence": 0.9,
+        "source_quality_weight": 0.8,
+        "verbatim_quote": "the platform we were given was not what we had paid for",
+        "reason": "This quote directly asserts that TechFlow failed to deliver the agreed-upon platform, which supports the proposition that TechFlow's failures were responsible for project issues.",
+        "weighted_contribution": 1.44
+      },
+      "top_contradicting_citation": {
+        "citation": "Deed of Variation No. 1, clause 2",
+        "doc_title": "Deed of Variation No. 1",
+        "doc_type": "amendment",
+        "author_party": "both",
+        "score": -2,
+        "confidence": 1.0,
+        "source_quality_weight": 1.0,
+        "verbatim_quote": "Save as varied by this Deed",
+        "reason": "This clause explicitly states that the original agreement has been varied, which directly contradicts the proposition that Meridian did not at any time request any change to the agreed scope of the works.",
+        "weighted_contribution": 2.0
+      },
+      "most_determinative_citation": {
+        "citation": "Deed of Variation No. 1, clause 2",
+        "doc_title": "Deed of Variation No. 1",
+        "doc_type": "amendment",
+        "author_party": "both",
+        "score": -2,
+        "confidence": 1.0,
+        "source_quality_weight": 1.0,
+        "verbatim_quote": "Save as varied by this Deed",
+        "reason": "This clause explicitly states that the original agreement has been varied, which directly contradicts the proposition that Meridian did not at any time request any change to the agreed scope of the works.",
+        "weighted_contribution": 2.0
+      },
+      "own_evidence_citations": [
+        {
+          "citation": "Nair WS, para 3",
+          "doc_title": "Witness Statement — Priya Nair",
+          "doc_type": "witness_statement",
+          "author_party": "claimant",
+          "score": -2,
+          "confidence": 1.0,
+          "source_quality_weight": 0.8,
+          "verbatim_quote": "it revised the go-live date from 1 October to 18 November 2024. I understood at the time that we were changing both the scope and the date.",
+          "reason": "This quote indicates that a change in scope led to a revision of the go-live date, directly contradicting the proposition that all delay was caused by TechFlow’s failure to allocate adequate and competent resources.",
+          "weighted_contribution": 1.6
+        }
+      ],
+      "all_supporting_citations": [
+        {
+          "citation": "Vance WS, para 7",
+          "doc_title": "Witness Statement — Helena Vance",
+          "doc_type": "witness_statement",
+          "author_party": "claimant",
+          "score": 2,
+          "confidence": 0.9,
+          "source_quality_weight": 0.8,
+          "verbatim_quote": "the platform we were given was not what we had paid for",
+          "reason": "This quote directly asserts that TechFlow failed to deliver the agreed-upon platform, which supports the proposition that TechFlow's failures were responsible for project issues.",
+          "weighted_contribution": 1.44
+        }
+      ],
+      "all_contradicting_citations": [
+        {
+          "citation": "Deed of Variation No. 1, clause 2",
+          "doc_title": "Deed of Variation No. 1",
+          "doc_type": "amendment",
+          "author_party": "both",
+          "score": -2,
+          "confidence": 1.0,
+          "source_quality_weight": 1.0,
+          "verbatim_quote": "Save as varied by this Deed",
+          "reason": "This clause explicitly states that the original agreement has been varied, which directly contradicts the proposition that Meridian did not at any time request any change to the agreed scope of the works.",
+          "weighted_contribution": 2.0
+        },
+        {
+          "citation": "Reilly to Vance, 24 Oct 2024",
+          "doc_title": "Email — Go-live Decision",
+          "doc_type": "email",
+          "author_party": "both",
+          "score": -2,
+          "confidence": 1.0,
+          "source_quality_weight": 0.9,
+          "verbatim_quote": "the loyalty module added under Change Order 3 is still being hardened",
+          "reason": "This quote indicates that a loyalty module was added to the scope of works via a Change Order, which directly contradicts the proposition that Meridian did not at any time request any change to the agreed scope of the works.",
+          "weighted_contribution": 1.8
+        },
+        {
+          "citation": "Nair WS, para 3",
+          "doc_title": "Witness Statement — Priya Nair",
+          "doc_type": "witness_statement",
+          "author_party": "claimant",
+          "score": -2,
+          "confidence": 1.0,
+          "source_quality_weight": 0.8,
+          "verbatim_quote": "it revised the go-live date from 1 October to 18 November 2024. I understood at the time that we were changing both the scope and the date.",
+          "reason": "This quote indicates that a change in scope led to a revision of the go-live date, directly contradicting the proposition that all delay was caused by TechFlow’s failure to allocate adequate and competent resources.",
+          "weighted_contribution": 1.6
+        },
+        {
+          "citation": "Harborne Quinn LLP, 7 Feb 2025",
+          "doc_title": "Letter — TechFlow Response",
+          "doc_type": "letter",
+          "author_party": "defendant",
+          "score": -2,
+          "confidence": 1.0,
+          "source_quality_weight": 0.75,
+          "verbatim_quote": "The most significant outage, on 25 November 2024, was caused by the failure of your client’s own network provider, Northgate Telecom, and not by the Platform.",
+          "reason": "This quote attributes a significant outage, which could cause delay, to Meridian's network provider, directly contradicting the proposition that all delay was caused by TechFlow.",
+          "weighted_contribution": 1.5
+        }
+      ],
+      "neutral_citations": [
+        {
+          "citation": "Vance WS, para 2",
+          "doc_title": "Witness Statement — Helena Vance",
+          "reason": "This statement identifies the witness's role as a contact person but provides no information about scope changes or causes of delay, making it inconclusive regarding the proposition."
+        },
+        {
+          "citation": "MSA, clause 3.2",
+          "doc_title": "Master Services Agreement",
+          "reason": "This clause outlines the contractual procedure for making changes to the scope, but it does not provide any information about whether Meridian requested changes or if any changes were made, nor does it address the cause of any delays."
+        },
+        {
+          "citation": "Nair WS, para 1",
+          "doc_title": "Witness Statement — Priya Nair",
+          "reason": "The quote establishes the witness's role in relation to the contract but does not contain any information about scope changes or causes of delay."
+        }
+      ],
+      "human_review_citations": [],
+      "no_evidence_note": null
+    }
+  },
+  {
+    "proposition_id": "p10",
+    "allegation_number": "10",
+    "proposition_text": "On numerous occasions prior to go-live, Meridian warned TechFlow that the Platform was not ready and requested that go-live be deferred. TechFlow ignored those warnings and proceeded to go-live on 18 November 2024.",
+    "legal_element_type": "go_live_decision",
+    "importance_weight": 0.85,
+    "proof_score": -1.0,
+    "risk_score": 1.0,
+    "max_possible_score": 4.7,
+    "status": "CONTRADICTED_BY_OWN_EVIDENCE",
+    "classification_confidence": "confident",
+    "boundary_distance": 0.4,
+    "retrieval_gap": true,
+    "is_own_evidence_contradiction": true,
+    "chunk_count": 3,
+    "supporting_count": 0,
+    "contradicting_count": 3,
+    "neutral_count": 0,
+    "human_review_count": 0,
+    "citation_audit": {
+      "top_supporting_citation": null,
+      "top_contradicting_citation": {
+        "citation": "Vance WS, para 4",
+        "doc_title": "Witness Statement — Helena Vance",
+        "doc_type": "witness_statement",
+        "author_party": "claimant",
+        "score": -2,
+        "confidence": 1.0,
+        "source_quality_weight": 0.8,
+        "verbatim_quote": "I took the decision to proceed despite TechFlow’s advice.",
+        "reason": "This quote indicates that Meridian proceeded with go-live despite TechFlow advising against it, which directly contradicts the proposition that TechFlow ignored warnings and proceeded to go-live.",
+        "weighted_contribution": 1.6
+      },
+      "most_determinative_citation": {
+        "citation": "Vance WS, para 4",
+        "doc_title": "Witness Statement — Helena Vance",
+        "doc_type": "witness_statement",
+        "author_party": "claimant",
+        "score": -2,
+        "confidence": 1.0,
+        "source_quality_weight": 0.8,
+        "verbatim_quote": "I took the decision to proceed despite TechFlow’s advice.",
+        "reason": "This quote indicates that Meridian proceeded with go-live despite TechFlow advising against it, which directly contradicts the proposition that TechFlow ignored warnings and proceeded to go-live.",
+        "weighted_contribution": 1.6
+      },
+      "own_evidence_citations": [
+        {
+          "citation": "Vance WS, para 4",
+          "doc_title": "Witness Statement — Helena Vance",
+          "doc_type": "witness_statement",
+          "author_party": "claimant",
+          "score": -2,
+          "confidence": 1.0,
+          "source_quality_weight": 0.8,
+          "verbatim_quote": "I took the decision to proceed despite TechFlow’s advice.",
+          "reason": "This quote indicates that Meridian proceeded with go-live despite TechFlow advising against it, which directly contradicts the proposition that TechFlow ignored warnings and proceeded to go-live.",
+          "weighted_contribution": 1.6
+        },
+        {
+          "citation": "Nair WS, para 3",
+          "doc_title": "Witness Statement — Priya Nair",
+          "doc_type": "witness_statement",
+          "author_party": "claimant",
+          "score": -2,
+          "confidence": 1.0,
+          "source_quality_weight": 0.8,
+          "verbatim_quote": "it revised the go-live date from 1 October to 18 November 2024",
+          "reason": "This quote states that the go-live date was formally revised to 18 November, which directly contradicts the proposition's claim that TechFlow ignored requests to defer the go-live date.",
+          "weighted_contribution": 1.6
+        }
+      ],
+      "all_supporting_citations": [],
+      "all_contradicting_citations": [
+        {
+          "citation": "Vance WS, para 4",
+          "doc_title": "Witness Statement — Helena Vance",
+          "doc_type": "witness_statement",
+          "author_party": "claimant",
+          "score": -2,
+          "confidence": 1.0,
+          "source_quality_weight": 0.8,
+          "verbatim_quote": "I took the decision to proceed despite TechFlow’s advice.",
+          "reason": "This quote indicates that Meridian proceeded with go-live despite TechFlow advising against it, which directly contradicts the proposition that TechFlow ignored warnings and proceeded to go-live.",
+          "weighted_contribution": 1.6
+        },
+        {
+          "citation": "Nair WS, para 3",
+          "doc_title": "Witness Statement — Priya Nair",
+          "doc_type": "witness_statement",
+          "author_party": "claimant",
+          "score": -2,
+          "confidence": 1.0,
+          "source_quality_weight": 0.8,
+          "verbatim_quote": "it revised the go-live date from 1 October to 18 November 2024",
+          "reason": "This quote states that the go-live date was formally revised to 18 November, which directly contradicts the proposition's claim that TechFlow ignored requests to defer the go-live date.",
+          "weighted_contribution": 1.6
+        },
+        {
+          "citation": "Harborne Quinn LLP, 7 Feb 2025",
+          "doc_title": "Letter — TechFlow Response",
+          "doc_type": "letter",
+          "author_party": "defendant",
+          "score": -2,
+          "confidence": 1.0,
+          "source_quality_weight": 0.75,
+          "verbatim_quote": "Our client expressly recommended, in writing on 24 October 2024, that go-live be deferred to January 2025 to avoid the peak trading period. Your client’s Programme Director rejected that recommendation and instructed our client to proceed on 18 November 2024, accepting the associated risk.",
+          "reason": "This quote states that TechFlow (our client) recommended deferral and Meridian (your client) rejected it and instructed TechFlow to proceed, which directly contradicts the proposition that Meridian warned TechFlow and TechFlow ignored those warnings and proceeded.",
+          "weighted_contribution": 1.5
+        }
+      ],
+      "neutral_citations": [],
+      "human_review_citations": [],
+      "no_evidence_note": null
+    }
+  },
+  {
+    "proposition_id": "p11",
+    "allegation_number": "11",
+    "proposition_text": "Following go-live, the Platform was unavailable for more than 40% of trading hours during November and December 2024, causing widespread till failures and an inability to process sales across Meridian’s store estate.",
+    "legal_element_type": "availability",
+    "importance_weight": 1.0,
+    "proof_score": -1.0,
+    "risk_score": 1.0,
+    "max_possible_score": 7.2,
+    "status": "CONTRADICTED_BY_OWN_EVIDENCE",
+    "classification_confidence": "confident",
+    "boundary_distance": 0.4,
+    "retrieval_gap": false,
+    "is_own_evidence_contradiction": true,
+    "chunk_count": 6,
+    "supporting_count": 0,
+    "contradicting_count": 4,
+    "neutral_count": 1,
+    "human_review_count": 1,
+    "citation_audit": {
+      "top_supporting_citation": null,
+      "top_contradicting_citation": {
+        "citation": "Whitfield Expert Report, para 7",
+        "doc_title": "Expert Report — Dr Alan Whitfield (IT)",
+        "doc_type": "expert_report",
+        "author_party": "claimant",
+        "score": -2,
+        "confidence": 1.0,
+        "source_quality_weight": 0.95,
+        "verbatim_quote": "the pleaded allegation that the Platform was unavailable for more than 40% of trading hours is not supported by the evidence",
+        "reason": "This quote directly states that the evidence does not support the proposition's claim regarding the platform's unavailability for more than 40% of trading hours.",
+        "weighted_contribution": 1.9
+      },
+      "most_determinative_citation": {
+        "citation": "Whitfield Expert Report, para 7",
+        "doc_title": "Expert Report — Dr Alan Whitfield (IT)",
+        "doc_type": "expert_report",
+        "author_party": "claimant",
+        "score": -2,
+        "confidence": 1.0,
+        "source_quality_weight": 0.95,
+        "verbatim_quote": "the pleaded allegation that the Platform was unavailable for more than 40% of trading hours is not supported by the evidence",
+        "reason": "This quote directly states that the evidence does not support the proposition's claim regarding the platform's unavailability for more than 40% of trading hours.",
+        "weighted_contribution": 1.9
+      },
+      "own_evidence_citations": [
+        {
+          "citation": "Whitfield Expert Report, para 7",
+          "doc_title": "Expert Report — Dr Alan Whitfield (IT)",
+          "doc_type": "expert_report",
+          "author_party": "claimant",
+          "score": -2,
+          "confidence": 1.0,
+          "source_quality_weight": 0.95,
+          "verbatim_quote": "the pleaded allegation that the Platform was unavailable for more than 40% of trading hours is not supported by the evidence",
+          "reason": "This quote directly states that the evidence does not support the proposition's claim regarding the platform's unavailability for more than 40% of trading hours.",
+          "weighted_contribution": 1.9
+        },
+        {
+          "citation": "Whitfield Expert Report, para 2",
+          "doc_title": "Expert Report — Dr Alan Whitfield (IT)",
+          "doc_type": "expert_report",
+          "author_party": "claimant",
+          "score": -2,
+          "confidence": 1.0,
+          "source_quality_weight": 0.95,
+          "verbatim_quote": "my opinion is that the total Platform unavailability attributable to the Platform itself was approximately 6.2% of trading hours over the period.",
+          "reason": "The expert's opinion states the platform was unavailable for approximately 6.2% of trading hours, which directly contradicts the proposition's claim of more than 40% unavailability.",
+          "weighted_contribution": 1.9
+        },
+        {
+          "citation": "Whitfield Expert Report, para 3",
+          "doc_title": "Expert Report — Dr Alan Whitfield (IT)",
+          "doc_type": "expert_report",
+          "author_party": "claimant",
+          "score": -2,
+          "confidence": 1.0,
+          "source_quality_weight": 0.95,
+          "verbatim_quote": "That figure is materially lower than the figure of \"more than 40% of trading hours\" referred to in the pleadings. I have found no support in the logs for a figure of that order.",
+          "reason": "The expert report directly states that the actual unavailability figure is materially lower than 40% and that logs do not support the pleaded figure.",
+          "weighted_contribution": 1.9
+        }
+      ],
+      "all_supporting_citations": [],
+      "all_contradicting_citations": [
+        {
+          "citation": "Whitfield Expert Report, para 7",
+          "doc_title": "Expert Report — Dr Alan Whitfield (IT)",
+          "doc_type": "expert_report",
+          "author_party": "claimant",
+          "score": -2,
+          "confidence": 1.0,
+          "source_quality_weight": 0.95,
+          "verbatim_quote": "the pleaded allegation that the Platform was unavailable for more than 40% of trading hours is not supported by the evidence",
+          "reason": "This quote directly states that the evidence does not support the proposition's claim regarding the platform's unavailability for more than 40% of trading hours.",
+          "weighted_contribution": 1.9
+        },
+        {
+          "citation": "Whitfield Expert Report, para 2",
+          "doc_title": "Expert Report — Dr Alan Whitfield (IT)",
+          "doc_type": "expert_report",
+          "author_party": "claimant",
+          "score": -2,
+          "confidence": 1.0,
+          "source_quality_weight": 0.95,
+          "verbatim_quote": "my opinion is that the total Platform unavailability attributable to the Platform itself was approximately 6.2% of trading hours over the period.",
+          "reason": "The expert's opinion states the platform was unavailable for approximately 6.2% of trading hours, which directly contradicts the proposition's claim of more than 40% unavailability.",
+          "weighted_contribution": 1.9
+        },
+        {
+          "citation": "Whitfield Expert Report, para 3",
+          "doc_title": "Expert Report — Dr Alan Whitfield (IT)",
+          "doc_type": "expert_report",
+          "author_party": "claimant",
+          "score": -2,
+          "confidence": 1.0,
+          "source_quality_weight": 0.95,
+          "verbatim_quote": "That figure is materially lower than the figure of \"more than 40% of trading hours\" referred to in the pleadings. I have found no support in the logs for a figure of that order.",
+          "reason": "The expert report directly states that the actual unavailability figure is materially lower than 40% and that logs do not support the pleaded figure.",
+          "weighted_contribution": 1.9
+        },
+        {
+          "citation": "Harborne Quinn LLP, 7 Feb 2025",
+          "doc_title": "Letter — TechFlow Response",
+          "doc_type": "letter",
+          "author_party": "defendant",
+          "score": -2,
+          "confidence": 1.0,
+          "source_quality_weight": 0.75,
+          "verbatim_quote": "The Platform was not \"unavailable for more than 40% of trading hours\".",
+          "reason": "This quote directly refutes the proposition's claim that the Platform was unavailable for more than 40% of trading hours.",
+          "weighted_contribution": 1.5
+        }
+      ],
+      "neutral_citations": [
+        {
+          "citation": "Vance to Reilly, 24 Oct 2024",
+          "doc_title": "Email — Go-live Decision",
+          "reason": "This quote indicates that there were known risks associated with the go-live, but it does not provide information about the platform's actual performance or unavailability after the go-live date."
+        }
+      ],
+      "human_review_citations": [
+        {
+          "citation": "Caldwell Pryce LLP, 20 Jan 2025",
+          "doc_title": "Letter — Notice of Termination",
+          "note": "Classification uncertain — requires human review",
+          "validation_errors": [
+            "verbatim_quote not found in chunk_text"
+          ]
+        }
+      ],
+      "no_evidence_note": null
+    }
+  },
+  {
+    "proposition_id": "p12",
+    "allegation_number": "12",
+    "proposition_text": "The Platform contained numerous defects, including critical (Severity 1) failures in the stock-synchronisation module which caused stores to display and sell against incorrect stock figures. By reason of those defects the Platform was not of satisfactory quality and was not reasonably fit for its purpose.",
+    "legal_element_type": "platform_defects",
+    "importance_weight": 1.0,
+    "proof_score": 0.9717,
+    "risk_score": 0.05,
+    "max_possible_score": 5.3,
+    "status": "SUPPORTED",
+    "classification_confidence": "confident",
+    "boundary_distance": 0.3717,
+    "retrieval_gap": true,
+    "is_own_evidence_contradiction": false,
+    "chunk_count": 3,
+    "supporting_count": 3,
+    "contradicting_count": 0,
+    "neutral_count": 0,
+    "human_review_count": 0,
+    "citation_audit": {
+      "top_supporting_citation": {
+        "citation": "Whitfield Expert Report, para 5",
+        "doc_title": "Expert Report — Dr Alan Whitfield (IT)",
+        "doc_type": "expert_report",
+        "author_party": "claimant",
+        "score": 2,
+        "confidence": 1.0,
+        "source_quality_weight": 0.95,
+        "verbatim_quote": "the Platform did contain genuine and serious defects in the stock-synchronisation module (defects D-001 and D-002 in the log). These were correctly categorised as Severity 1. They caused incorrect stock figures at the point of sale and overselling on certain lines",
+        "reason": "This quote directly confirms the existence of Severity 1 defects in the stock-synchronisation module and their effect of causing incorrect stock figures, which are key factual assertions of the proposition.",
+        "weighted_contribution": 1.9
+      },
+      "top_contradicting_citation": null,
+      "most_determinative_citation": {
+        "citation": "Whitfield Expert Report, para 5",
+        "doc_title": "Expert Report — Dr Alan Whitfield (IT)",
+        "doc_type": "expert_report",
+        "author_party": "claimant",
+        "score": 2,
+        "confidence": 1.0,
+        "source_quality_weight": 0.95,
+        "verbatim_quote": "the Platform did contain genuine and serious defects in the stock-synchronisation module (defects D-001 and D-002 in the log). These were correctly categorised as Severity 1. They caused incorrect stock figures at the point of sale and overselling on certain lines",
+        "reason": "This quote directly confirms the existence of Severity 1 defects in the stock-synchronisation module and their effect of causing incorrect stock figures, which are key factual assertions of the proposition.",
+        "weighted_contribution": 1.9
+      },
+      "own_evidence_citations": [],
+      "all_supporting_citations": [
+        {
+          "citation": "Whitfield Expert Report, para 5",
+          "doc_title": "Expert Report — Dr Alan Whitfield (IT)",
+          "doc_type": "expert_report",
+          "author_party": "claimant",
+          "score": 2,
+          "confidence": 1.0,
+          "source_quality_weight": 0.95,
+          "verbatim_quote": "the Platform did contain genuine and serious defects in the stock-synchronisation module (defects D-001 and D-002 in the log). These were correctly categorised as Severity 1. They caused incorrect stock figures at the point of sale and overselling on certain lines",
+          "reason": "This quote directly confirms the existence of Severity 1 defects in the stock-synchronisation module and their effect of causing incorrect stock figures, which are key factual assertions of the proposition.",
+          "weighted_contribution": 1.9
+        },
+        {
+          "citation": "Whitfield Expert Report, para 7",
+          "doc_title": "Expert Report — Dr Alan Whitfield (IT)",
+          "doc_type": "expert_report",
+          "author_party": "claimant",
+          "score": 2,
+          "confidence": 1.0,
+          "source_quality_weight": 0.95,
+          "verbatim_quote": "the Platform contained genuine and serious stock-synchronisation defects which fell below the expected standard",
+          "reason": "The quote directly confirms the existence of genuine and serious stock-synchronisation defects and states they fell below the expected standard, supporting the proposition's claim of defects and unsatisfactory quality.",
+          "weighted_contribution": 1.9
+        },
+        {
+          "citation": "Caldwell Pryce LLP, 20 Jan 2025",
+          "doc_title": "Letter — Notice of Termination",
+          "doc_type": "letter",
+          "author_party": "claimant",
+          "score": 2,
+          "confidence": 0.9,
+          "source_quality_weight": 0.75,
+          "verbatim_quote": "the Platform suffered serious and repeated failures, including critical defects in the stock-synchronisation module; and (iii) the Platform was not of satisfactory quality nor fit for purpose.",
+          "reason": "This quote directly asserts that the Platform had critical defects in the stock-synchronisation module and was not of satisfactory quality or fit for purpose, which directly supports the proposition.",
+          "weighted_contribution": 1.35
+        }
+      ],
+      "all_contradicting_citations": [],
+      "neutral_citations": [],
+      "human_review_citations": [],
+      "no_evidence_note": null
+    }
+  },
+  {
+    "proposition_id": "p13",
+    "allegation_number": "13",
+    "proposition_text": "Meridian did not accept the Platform or any part of it, and no acceptance or sign-off was given by Meridian at any time.",
+    "legal_element_type": "acceptance",
+    "importance_weight": 0.95,
+    "proof_score": -1.0,
+    "risk_score": 1.0,
+    "max_possible_score": 5.4,
+    "status": "CONTRADICTED_BY_OWN_EVIDENCE",
+    "classification_confidence": "confident",
+    "boundary_distance": 0.4,
+    "retrieval_gap": false,
+    "is_own_evidence_contradiction": true,
+    "chunk_count": 8,
+    "supporting_count": 0,
+    "contradicting_count": 3,
+    "neutral_count": 5,
+    "human_review_count": 0,
+    "citation_audit": {
+      "top_supporting_citation": null,
+      "top_contradicting_citation": {
+        "citation": "UAT Acceptance Certificate, 12 Nov 2024",
+        "doc_title": "UAT Acceptance Certificate",
+        "doc_type": "record",
+        "author_party": "claimant",
+        "score": -2,
+        "confidence": 1.0,
+        "source_quality_weight": 1.0,
+        "verbatim_quote": "Meridian confirms that Phase 1 has passed User Acceptance Testing and is accepted, subject to the resolution of the outstanding minor (Severity 3 and 4) items listed in the snag log appended to the UAT report.",
+        "reason": "This quote directly contradicts the proposition by stating that Meridian accepted Phase 1 of the Platform.",
+        "weighted_contribution": 2.0
+      },
+      "most_determinative_citation": {
+        "citation": "UAT Acceptance Certificate, 12 Nov 2024",
+        "doc_title": "UAT Acceptance Certificate",
+        "doc_type": "record",
+        "author_party": "claimant",
+        "score": -2,
+        "confidence": 1.0,
+        "source_quality_weight": 1.0,
+        "verbatim_quote": "Meridian confirms that Phase 1 has passed User Acceptance Testing and is accepted, subject to the resolution of the outstanding minor (Severity 3 and 4) items listed in the snag log appended to the UAT report.",
+        "reason": "This quote directly contradicts the proposition by stating that Meridian accepted Phase 1 of the Platform.",
+        "weighted_contribution": 2.0
+      },
+      "own_evidence_citations": [
+        {
+          "citation": "UAT Acceptance Certificate, 12 Nov 2024",
+          "doc_title": "UAT Acceptance Certificate",
+          "doc_type": "record",
+          "author_party": "claimant",
+          "score": -2,
+          "confidence": 1.0,
+          "source_quality_weight": 1.0,
+          "verbatim_quote": "Meridian confirms that Phase 1 has passed User Acceptance Testing and is accepted, subject to the resolution of the outstanding minor (Severity 3 and 4) items listed in the snag log appended to the UAT report.",
+          "reason": "This quote directly contradicts the proposition by stating that Meridian accepted Phase 1 of the Platform.",
+          "weighted_contribution": 2.0
+        },
+        {
+          "citation": "Nair WS, para 4",
+          "doc_title": "Witness Statement — Priya Nair",
+          "doc_type": "witness_statement",
+          "author_party": "claimant",
+          "score": -2,
+          "confidence": 1.0,
+          "source_quality_weight": 0.8,
+          "verbatim_quote": "On 12 November 2024 I signed the Phase 1 Acceptance Certificate, confirming that Phase 1 of the platform had passed user acceptance testing.",
+          "reason": "This quote directly states that an Acceptance Certificate was signed, which contradicts the proposition that no acceptance or sign-off was given by Meridian.",
+          "weighted_contribution": 1.6
+        }
+      ],
+      "all_supporting_citations": [],
+      "all_contradicting_citations": [
+        {
+          "citation": "UAT Acceptance Certificate, 12 Nov 2024",
+          "doc_title": "UAT Acceptance Certificate",
+          "doc_type": "record",
+          "author_party": "claimant",
+          "score": -2,
+          "confidence": 1.0,
+          "source_quality_weight": 1.0,
+          "verbatim_quote": "Meridian confirms that Phase 1 has passed User Acceptance Testing and is accepted, subject to the resolution of the outstanding minor (Severity 3 and 4) items listed in the snag log appended to the UAT report.",
+          "reason": "This quote directly contradicts the proposition by stating that Meridian accepted Phase 1 of the Platform.",
+          "weighted_contribution": 2.0
+        },
+        {
+          "citation": "Vance to Reilly, 24 Oct 2024",
+          "doc_title": "Email — Go-live Decision",
+          "doc_type": "email",
+          "author_party": "both",
+          "score": -2,
+          "confidence": 1.0,
+          "source_quality_weight": 0.9,
+          "verbatim_quote": "Please proceed to go-live on 18 November 2024 as planned.",
+          "reason": "This instruction from a Meridian representative to launch the platform directly contradicts the proposition that Meridian did not accept the platform or give any sign-off.",
+          "weighted_contribution": 1.8
+        },
+        {
+          "citation": "Nair WS, para 4",
+          "doc_title": "Witness Statement — Priya Nair",
+          "doc_type": "witness_statement",
+          "author_party": "claimant",
+          "score": -2,
+          "confidence": 1.0,
+          "source_quality_weight": 0.8,
+          "verbatim_quote": "On 12 November 2024 I signed the Phase 1 Acceptance Certificate, confirming that Phase 1 of the platform had passed user acceptance testing.",
+          "reason": "This quote directly states that an Acceptance Certificate was signed, which contradicts the proposition that no acceptance or sign-off was given by Meridian.",
+          "weighted_contribution": 1.6
+        }
+      ],
+      "neutral_citations": [
+        {
+          "citation": "Vance WS, para 7",
+          "doc_title": "Witness Statement — Helena Vance",
+          "reason": "The quote expresses Meridian's dissatisfaction with the platform and their decision to end the relationship, which the provided context explicitly states is not evidence of formal acceptance or non-acceptance."
+        },
+        {
+          "citation": "Vance WS, para 1",
+          "doc_title": "Witness Statement — Helena Vance",
+          "reason": "This quote establishes the witness's role in the Platform implementation but does not provide any information about whether Meridian accepted or signed off on the Platform."
+        },
+        {
+          "citation": "Caldwell Pryce LLP, 20 Jan 2025",
+          "doc_title": "Letter — Notice of Termination",
+          "reason": "This phrase indicates the termination of an agreement and the initiation of a dispute, but it does not provide information about whether the Platform was accepted or not."
+        },
+        {
+          "citation": "Nair WS, para 2",
+          "doc_title": "Witness Statement — Priya Nair",
+          "reason": "This quote indicates Meridian entered into a contract for services, but it does not address whether Meridian accepted or signed off on the Platform itself as a deliverable."
+        },
+        {
+          "citation": "Nair WS, para 5",
+          "doc_title": "Witness Statement — Priya Nair",
+          "reason": "This quote discusses withholding payments due to post-go-live problems, which does not provide information about whether formal contractual acceptance or sign-off was given."
+        }
+      ],
+      "human_review_citations": [],
+      "no_evidence_note": null
+    }
+  },
+  {
+    "proposition_id": "p14",
+    "allegation_number": "14",
+    "proposition_text": "Further, TechFlow failed to provide adequate training to Meridian’s staff in the use of the Platform.",
+    "legal_element_type": "training",
+    "importance_weight": 0.5,
+    "proof_score": -0.4,
+    "risk_score": 0.35,
+    "max_possible_score": 5.6,
+    "status": "CONTRADICTED",
+    "classification_confidence": "confident",
+    "boundary_distance": 0.2,
+    "retrieval_gap": true,
+    "is_own_evidence_contradiction": false,
+    "chunk_count": 4,
+    "supporting_count": 1,
+    "contradicting_count": 2,
+    "neutral_count": 1,
+    "human_review_count": 0,
+    "citation_audit": {
+      "top_supporting_citation": {
+        "citation": "Nair WS, para 5",
+        "doc_title": "Witness Statement — Priya Nair",
+        "doc_type": "witness_statement",
+        "author_party": "claimant",
+        "score": 1,
+        "confidence": 0.7,
+        "source_quality_weight": 0.8,
+        "verbatim_quote": "because of the problems we experienced after go-live",
+        "reason": "This statement indicates that payments were withheld due to general issues, which is consistent with the proposition that inadequate training was one such problem, though it does not explicitly confirm it.",
+        "weighted_contribution": 0.56
+      },
+      "top_contradicting_citation": {
+        "citation": "SOW, clause 3.2",
+        "doc_title": "Statement of Work (SOW-01)",
+        "doc_type": "contract",
+        "author_party": "both",
+        "score": -2,
+        "confidence": 1.0,
+        "source_quality_weight": 1.0,
+        "verbatim_quote": "Training of the Customer’s store and head-office staff in the use of the Platform is the responsibility of the Customer. The Supplier shall provide a train-the-trainer session and written user guides only.",
+        "reason": "The quote explicitly states that the Customer is responsible for training its own staff and the Supplier's role is limited to a train-the-trainer session and user guides, directly contradicting the proposition that TechFlow failed to provide adequate training to Meridian’s staff.",
+        "weighted_contribution": 2.0
+      },
+      "most_determinative_citation": {
+        "citation": "SOW, clause 3.2",
+        "doc_title": "Statement of Work (SOW-01)",
+        "doc_type": "contract",
+        "author_party": "both",
+        "score": -2,
+        "confidence": 1.0,
+        "source_quality_weight": 1.0,
+        "verbatim_quote": "Training of the Customer’s store and head-office staff in the use of the Platform is the responsibility of the Customer. The Supplier shall provide a train-the-trainer session and written user guides only.",
+        "reason": "The quote explicitly states that the Customer is responsible for training its own staff and the Supplier's role is limited to a train-the-trainer session and user guides, directly contradicting the proposition that TechFlow failed to provide adequate training to Meridian’s staff.",
+        "weighted_contribution": 2.0
+      },
+      "own_evidence_citations": [
+        {
+          "citation": "UAT Acceptance Certificate, 12 Nov 2024",
+          "doc_title": "UAT Acceptance Certificate",
+          "doc_type": "record",
+          "author_party": "claimant",
+          "score": -1,
+          "confidence": 0.8,
+          "source_quality_weight": 1.0,
+          "verbatim_quote": "Meridian confirms that Phase 1 has passed User Acceptance Testing and is accepted",
+          "reason": "The successful passing of User Acceptance Testing by Meridian suggests that their staff possessed sufficient understanding to operate the platform, which is in tension with a failure to provide adequate training.",
+          "weighted_contribution": 0.8
+        }
+      ],
+      "all_supporting_citations": [
+        {
+          "citation": "Nair WS, para 5",
+          "doc_title": "Witness Statement — Priya Nair",
+          "doc_type": "witness_statement",
+          "author_party": "claimant",
+          "score": 1,
+          "confidence": 0.7,
+          "source_quality_weight": 0.8,
+          "verbatim_quote": "because of the problems we experienced after go-live",
+          "reason": "This statement indicates that payments were withheld due to general issues, which is consistent with the proposition that inadequate training was one such problem, though it does not explicitly confirm it.",
+          "weighted_contribution": 0.56
+        }
+      ],
+      "all_contradicting_citations": [
+        {
+          "citation": "SOW, clause 3.2",
+          "doc_title": "Statement of Work (SOW-01)",
+          "doc_type": "contract",
+          "author_party": "both",
+          "score": -2,
+          "confidence": 1.0,
+          "source_quality_weight": 1.0,
+          "verbatim_quote": "Training of the Customer’s store and head-office staff in the use of the Platform is the responsibility of the Customer. The Supplier shall provide a train-the-trainer session and written user guides only.",
+          "reason": "The quote explicitly states that the Customer is responsible for training its own staff and the Supplier's role is limited to a train-the-trainer session and user guides, directly contradicting the proposition that TechFlow failed to provide adequate training to Meridian’s staff.",
+          "weighted_contribution": 2.0
+        },
+        {
+          "citation": "UAT Acceptance Certificate, 12 Nov 2024",
+          "doc_title": "UAT Acceptance Certificate",
+          "doc_type": "record",
+          "author_party": "claimant",
+          "score": -1,
+          "confidence": 0.8,
+          "source_quality_weight": 1.0,
+          "verbatim_quote": "Meridian confirms that Phase 1 has passed User Acceptance Testing and is accepted",
+          "reason": "The successful passing of User Acceptance Testing by Meridian suggests that their staff possessed sufficient understanding to operate the platform, which is in tension with a failure to provide adequate training.",
+          "weighted_contribution": 0.8
+        }
+      ],
+      "neutral_citations": [
+        {
+          "citation": "Nair WS, para 1",
+          "doc_title": "Witness Statement — Priya Nair",
+          "reason": "This quote identifies the witness's role and her responsibility for the contract, but it does not provide any information about the training provided by TechFlow."
+        }
+      ],
+      "human_review_citations": [],
+      "no_evidence_note": null
+    }
+  },
+  {
+    "proposition_id": "p15a",
+    "allegation_number": "15a",
+    "proposition_text": "By reason of the matters aforesaid Meridian has suffered loss and damage.",
+    "legal_element_type": "loss_wasted_expenditure",
+    "importance_weight": 0.75,
+    "proof_score": 0.6071,
+    "risk_score": 0.1473,
+    "max_possible_score": 8.1,
+    "status": "SUPPORTED",
+    "classification_confidence": "borderline",
+    "boundary_distance": 0.0071,
+    "retrieval_gap": false,
+    "is_own_evidence_contradiction": false,
+    "chunk_count": 6,
+    "supporting_count": 4,
+    "contradicting_count": 1,
+    "neutral_count": 1,
+    "human_review_count": 0,
+    "citation_audit": {
+      "top_supporting_citation": {
+        "citation": "Greenhalgh Expert Report, para 2",
+        "doc_title": "Expert Report — Fiona Greenhalgh FCA (Quantum)",
+        "doc_type": "expert_report",
+        "author_party": "claimant",
+        "score": 2,
+        "confidence": 1.0,
+        "source_quality_weight": 0.95,
+        "verbatim_quote": "The pleaded wasted expenditure of £1,800,000 is consistent with the Claimant’s accounting records and the sums invoiced and paid under the Master Services Agreement. I have no reason to challenge this element on a wasted-expenditure basis.",
+        "reason": "The expert report directly confirms the consistency of the pleaded wasted expenditure with accounting records and states no reason to challenge it, thereby supporting the claim of loss and damage.",
+        "weighted_contribution": 1.9
+      },
+      "top_contradicting_citation": {
+        "citation": "Okafor WS, para 4",
+        "doc_title": "Witness Statement — Raymond Okafor",
+        "doc_type": "witness_statement",
+        "author_party": "claimant",
+        "score": -1,
+        "confidence": 0.9,
+        "source_quality_weight": 0.8,
+        "verbatim_quote": "Our trading in December 2024 was poor, but the platform was not the only reason.",
+        "reason": "This quote indicates that other factors contributed to poor trading, thereby weakening the claim that the alleged matters were the sole cause of Meridian's loss and damage.",
+        "weighted_contribution": 0.72
+      },
+      "most_determinative_citation": {
+        "citation": "Greenhalgh Expert Report, para 2",
+        "doc_title": "Expert Report — Fiona Greenhalgh FCA (Quantum)",
+        "doc_type": "expert_report",
+        "author_party": "claimant",
+        "score": 2,
+        "confidence": 1.0,
+        "source_quality_weight": 0.95,
+        "verbatim_quote": "The pleaded wasted expenditure of £1,800,000 is consistent with the Claimant’s accounting records and the sums invoiced and paid under the Master Services Agreement. I have no reason to challenge this element on a wasted-expenditure basis.",
+        "reason": "The expert report directly confirms the consistency of the pleaded wasted expenditure with accounting records and states no reason to challenge it, thereby supporting the claim of loss and damage.",
+        "weighted_contribution": 1.9
+      },
+      "own_evidence_citations": [
+        {
+          "citation": "Okafor WS, para 4",
+          "doc_title": "Witness Statement — Raymond Okafor",
+          "doc_type": "witness_statement",
+          "author_party": "claimant",
+          "score": -1,
+          "confidence": 0.9,
+          "source_quality_weight": 0.8,
+          "verbatim_quote": "Our trading in December 2024 was poor, but the platform was not the only reason.",
+          "reason": "This quote indicates that other factors contributed to poor trading, thereby weakening the claim that the alleged matters were the sole cause of Meridian's loss and damage.",
+          "weighted_contribution": 0.72
+        }
+      ],
+      "all_supporting_citations": [
+        {
+          "citation": "Greenhalgh Expert Report, para 2",
+          "doc_title": "Expert Report — Fiona Greenhalgh FCA (Quantum)",
+          "doc_type": "expert_report",
+          "author_party": "claimant",
+          "score": 2,
+          "confidence": 1.0,
+          "source_quality_weight": 0.95,
+          "verbatim_quote": "The pleaded wasted expenditure of £1,800,000 is consistent with the Claimant’s accounting records and the sums invoiced and paid under the Master Services Agreement. I have no reason to challenge this element on a wasted-expenditure basis.",
+          "reason": "The expert report directly confirms the consistency of the pleaded wasted expenditure with accounting records and states no reason to challenge it, thereby supporting the claim of loss and damage.",
+          "weighted_contribution": 1.9
+        },
+        {
+          "citation": "Vance WS, para 7",
+          "doc_title": "Witness Statement — Helena Vance",
+          "doc_type": "witness_statement",
+          "author_party": "claimant",
+          "score": 2,
+          "confidence": 1.0,
+          "source_quality_weight": 0.8,
+          "verbatim_quote": "I considered that the platform we were given was not what we had paid for",
+          "reason": "This quote directly asserts that Meridian paid for a platform that was not delivered as expected, which supports the claim of wasted expenditure and thus loss and damage.",
+          "weighted_contribution": 1.6
+        },
+        {
+          "citation": "Caldwell Pryce LLP, 20 Jan 2025",
+          "doc_title": "Letter — Notice of Termination",
+          "doc_type": "letter",
+          "author_party": "claimant",
+          "score": 2,
+          "confidence": 1.0,
+          "source_quality_weight": 0.75,
+          "verbatim_quote": "These failures occurred during our client’s most important trading period and caused substantial loss.",
+          "reason": "This quote directly asserts that the failures, which are the basis for the proposition's 'matters aforesaid', caused substantial loss to Meridian.",
+          "weighted_contribution": 1.5
+        },
+        {
+          "citation": "Harborne Quinn LLP, 7 Feb 2025",
+          "doc_title": "Letter — TechFlow Response",
+          "doc_type": "letter",
+          "author_party": "defendant",
+          "score": 1,
+          "confidence": 0.85,
+          "source_quality_weight": 0.75,
+          "verbatim_quote": "caps our client’s liability at the charges actually paid",
+          "reason": "This statement from the defendant acknowledges the 'charges actually paid' as a potential measure for liability, which is consistent with Meridian's claim that the sums paid constitute its wasted expenditure loss.",
+          "weighted_contribution": 0.6375
+        }
+      ],
+      "all_contradicting_citations": [
+        {
+          "citation": "Okafor WS, para 4",
+          "doc_title": "Witness Statement — Raymond Okafor",
+          "doc_type": "witness_statement",
+          "author_party": "claimant",
+          "score": -1,
+          "confidence": 0.9,
+          "source_quality_weight": 0.8,
+          "verbatim_quote": "Our trading in December 2024 was poor, but the platform was not the only reason.",
+          "reason": "This quote indicates that other factors contributed to poor trading, thereby weakening the claim that the alleged matters were the sole cause of Meridian's loss and damage.",
+          "weighted_contribution": 0.72
+        }
+      ],
+      "neutral_citations": [
+        {
+          "citation": "Vance WS, para 1",
+          "doc_title": "Witness Statement — Helena Vance",
+          "reason": "This quote establishes the witness's role in the program but does not provide any information about Meridian suffering loss or damage."
+        }
+      ],
+      "human_review_citations": [],
+      "no_evidence_note": null
+    }
+  },
+  {
+    "proposition_id": "p15b",
+    "allegation_number": "15b",
+    "proposition_text": "By reason of the matters aforesaid Meridian has suffered loss and damage.",
+    "legal_element_type": "loss_of_profit",
+    "importance_weight": 0.95,
+    "proof_score": -0.1548,
+    "risk_score": 0.5485,
+    "max_possible_score": 6.2,
+    "status": "INCONCLUSIVE",
+    "classification_confidence": "borderline",
+    "boundary_distance": 0.0452,
+    "retrieval_gap": false,
+    "is_own_evidence_contradiction": false,
+    "chunk_count": 6,
+    "supporting_count": 2,
+    "contradicting_count": 2,
+    "neutral_count": 1,
+    "human_review_count": 1,
+    "citation_audit": {
+      "top_supporting_citation": {
+        "citation": "Caldwell Pryce LLP, 20 Jan 2025",
+        "doc_title": "Letter — Notice of Termination",
+        "doc_type": "letter",
+        "author_party": "claimant",
+        "score": 2,
+        "confidence": 1.0,
+        "source_quality_weight": 0.75,
+        "verbatim_quote": "These failures occurred during our client’s most important trading period and caused substantial loss.",
+        "reason": "The quote directly asserts that failures during the client's most important trading period caused substantial loss, which supports the proposition that Meridian suffered loss and damage.",
+        "weighted_contribution": 1.5
+      },
+      "top_contradicting_citation": {
+        "citation": "Okafor WS, para 4",
+        "doc_title": "Witness Statement — Raymond Okafor",
+        "doc_type": "witness_statement",
+        "author_party": "claimant",
+        "score": -2,
+        "confidence": 1.0,
+        "source_quality_weight": 0.8,
+        "verbatim_quote": "Our trading in December 2024 was poor, but the platform was not the only reason.",
+        "reason": "The quote acknowledges poor trading in December 2024 but explicitly states that the platform (implied to be the 'matters aforesaid' causing the loss) was not the sole reason, thereby directly challenging the causal attribution of the loss solely to the alleged wrongdoing.",
+        "weighted_contribution": 1.6
+      },
+      "most_determinative_citation": {
+        "citation": "Okafor WS, para 4",
+        "doc_title": "Witness Statement — Raymond Okafor",
+        "doc_type": "witness_statement",
+        "author_party": "claimant",
+        "score": -2,
+        "confidence": 1.0,
+        "source_quality_weight": 0.8,
+        "verbatim_quote": "Our trading in December 2024 was poor, but the platform was not the only reason.",
+        "reason": "The quote acknowledges poor trading in December 2024 but explicitly states that the platform (implied to be the 'matters aforesaid' causing the loss) was not the sole reason, thereby directly challenging the causal attribution of the loss solely to the alleged wrongdoing.",
+        "weighted_contribution": 1.6
+      },
+      "own_evidence_citations": [
+        {
+          "citation": "Okafor WS, para 4",
+          "doc_title": "Witness Statement — Raymond Okafor",
+          "doc_type": "witness_statement",
+          "author_party": "claimant",
+          "score": -2,
+          "confidence": 1.0,
+          "source_quality_weight": 0.8,
+          "verbatim_quote": "Our trading in December 2024 was poor, but the platform was not the only reason.",
+          "reason": "The quote acknowledges poor trading in December 2024 but explicitly states that the platform (implied to be the 'matters aforesaid' causing the loss) was not the sole reason, thereby directly challenging the causal attribution of the loss solely to the alleged wrongdoing.",
+          "weighted_contribution": 1.6
+        }
+      ],
+      "all_supporting_citations": [
+        {
+          "citation": "Caldwell Pryce LLP, 20 Jan 2025",
+          "doc_title": "Letter — Notice of Termination",
+          "doc_type": "letter",
+          "author_party": "claimant",
+          "score": 2,
+          "confidence": 1.0,
+          "source_quality_weight": 0.75,
+          "verbatim_quote": "These failures occurred during our client’s most important trading period and caused substantial loss.",
+          "reason": "The quote directly asserts that failures during the client's most important trading period caused substantial loss, which supports the proposition that Meridian suffered loss and damage.",
+          "weighted_contribution": 1.5
+        },
+        {
+          "citation": "Vance WS, para 7",
+          "doc_title": "Witness Statement — Helena Vance",
+          "doc_type": "witness_statement",
+          "author_party": "claimant",
+          "score": 1,
+          "confidence": 0.8,
+          "source_quality_weight": 0.8,
+          "verbatim_quote": "that is why Meridian decided to bring the relationship to an end.",
+          "reason": "This statement indicates Meridian terminated a relationship, an action that could foreseeably lead to the loss and damage alleged in the proposition.",
+          "weighted_contribution": 0.64
+        }
+      ],
+      "all_contradicting_citations": [
+        {
+          "citation": "Okafor WS, para 4",
+          "doc_title": "Witness Statement — Raymond Okafor",
+          "doc_type": "witness_statement",
+          "author_party": "claimant",
+          "score": -2,
+          "confidence": 1.0,
+          "source_quality_weight": 0.8,
+          "verbatim_quote": "Our trading in December 2024 was poor, but the platform was not the only reason.",
+          "reason": "The quote acknowledges poor trading in December 2024 but explicitly states that the platform (implied to be the 'matters aforesaid' causing the loss) was not the sole reason, thereby directly challenging the causal attribution of the loss solely to the alleged wrongdoing.",
+          "weighted_contribution": 1.6
+        },
+        {
+          "citation": "Harborne Quinn LLP, 7 Feb 2025",
+          "doc_title": "Letter — TechFlow Response",
+          "doc_type": "letter",
+          "author_party": "defendant",
+          "score": -2,
+          "confidence": 1.0,
+          "source_quality_weight": 0.75,
+          "verbatim_quote": "Your client’s pleaded loss of profit is grossly overstated",
+          "reason": "This statement directly asserts that the amount of loss claimed by Meridian is significantly higher than the actual loss, thereby contradicting the proposition that Meridian has suffered the pleaded loss.",
+          "weighted_contribution": 1.5
+        }
+      ],
+      "neutral_citations": [
+        {
+          "citation": "Greenhalgh Expert Report, para 2",
+          "doc_title": "Expert Report — Fiona Greenhalgh FCA (Quantum)",
+          "reason": "The quote confirms the consistency and lack of challenge for a claim of wasted expenditure, which is a different type of loss than the loss of profit specified in the proposition's context."
+        }
+      ],
+      "human_review_citations": [
+        {
+          "citation": "Vance WS, para 1",
+          "doc_title": "Witness Statement — Helena Vance",
+          "note": "Classification uncertain — requires human review",
+          "validation_errors": [
+            "verbatim_quote not found in chunk_text"
+          ]
+        }
+      ],
+      "no_evidence_note": null
+    }
+  },
+  {
+    "proposition_id": "p16",
+    "allegation_number": "16",
+    "proposition_text": "Further, Meridian claims interest on such sums as may be found due, pursuant to section 35A of the Senior Courts Act 1981, at such rate and for such period as the Court thinks fit.",
+    "legal_element_type": "loss_wasted_expenditure",
+    "importance_weight": 0.75,
+    "proof_score": -1.0,
+    "risk_score": 0.75,
+    "max_possible_score": 1.5,
+    "status": "STRONGLY_CONTRADICTED",
+    "classification_confidence": "confident",
+    "boundary_distance": 0.4,
+    "retrieval_gap": true,
+    "is_own_evidence_contradiction": false,
+    "chunk_count": 3,
+    "supporting_count": 0,
+    "contradicting_count": 1,
+    "neutral_count": 2,
+    "human_review_count": 0,
+    "citation_audit": {
+      "top_supporting_citation": null,
+      "top_contradicting_citation": {
+        "citation": "Harborne Quinn LLP, 7 Feb 2025",
+        "doc_title": "Letter — TechFlow Response",
+        "doc_type": "letter",
+        "author_party": "defendant",
+        "score": -2,
+        "confidence": 1.0,
+        "source_quality_weight": 0.75,
+        "verbatim_quote": "Your client has wrongly withheld the final two milestone payments totalling £600,000, which remain due to our client.",
+        "reason": "This quote asserts that Meridian (referred to as 'Your client') owes money to TechFlow, directly contradicting the proposition's premise that sums are due to Meridian upon which interest could be claimed.",
+        "weighted_contribution": 1.5
+      },
+      "most_determinative_citation": {
+        "citation": "Harborne Quinn LLP, 7 Feb 2025",
+        "doc_title": "Letter — TechFlow Response",
+        "doc_type": "letter",
+        "author_party": "defendant",
+        "score": -2,
+        "confidence": 1.0,
+        "source_quality_weight": 0.75,
+        "verbatim_quote": "Your client has wrongly withheld the final two milestone payments totalling £600,000, which remain due to our client.",
+        "reason": "This quote asserts that Meridian (referred to as 'Your client') owes money to TechFlow, directly contradicting the proposition's premise that sums are due to Meridian upon which interest could be claimed.",
+        "weighted_contribution": 1.5
+      },
+      "own_evidence_citations": [],
+      "all_supporting_citations": [],
+      "all_contradicting_citations": [
+        {
+          "citation": "Harborne Quinn LLP, 7 Feb 2025",
+          "doc_title": "Letter — TechFlow Response",
+          "doc_type": "letter",
+          "author_party": "defendant",
+          "score": -2,
+          "confidence": 1.0,
+          "source_quality_weight": 0.75,
+          "verbatim_quote": "Your client has wrongly withheld the final two milestone payments totalling £600,000, which remain due to our client.",
+          "reason": "This quote asserts that Meridian (referred to as 'Your client') owes money to TechFlow, directly contradicting the proposition's premise that sums are due to Meridian upon which interest could be claimed.",
+          "weighted_contribution": 1.5
+        }
+      ],
+      "neutral_citations": [
+        {
+          "citation": "Nair WS, para 2",
+          "doc_title": "Witness Statement — Priya Nair",
+          "reason": "The quote establishes the value of the contract, which could be a basis for sums due, but it does not mention or address the claim for interest on such sums."
+        },
+        {
+          "citation": "Vance WS, para 7",
+          "doc_title": "Witness Statement — Helena Vance",
+          "reason": "The quote explains Meridian's reason for ending a relationship, which could lead to a claim for sums due, but it does not mention or directly relate to a claim for interest on such sums."
+        }
+      ],
+      "human_review_citations": [],
+      "no_evidence_note": null
+    }
+  }
+]

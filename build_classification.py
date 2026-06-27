@@ -60,6 +60,7 @@ Critical rules:
 - Do not consider document type when assigning your score — classify only what the text says"""
 
 PROPOSITION_ENRICHMENT = {
+    "p13": "This proposition concerns formal contractual acceptance under the MSA — specifically whether Meridian gave formal UAT sign-off or acceptance of the Platform. Evidence about post-acceptance conduct (ending the relationship, withholding milestone payments, expressing dissatisfaction with quality) is NOT evidence about whether formal acceptance was given. Classify only based on whether the chunk provides evidence about whether formal UAT acceptance or sign-off was or was not given.",
     "p15a": "This proposition relates specifically to wasted expenditure of £1,800,000 — the total sums paid by Meridian to TechFlow under the MSA.",
     "p15b": "This proposition relates specifically to loss of profit of £4,200,000 claimed by Meridian for the peak trading period of November and December 2024.",
 }
