@@ -1,8 +1,10 @@
+import sys, pathlib; sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))
 from neo4j import GraphDatabase
 from dotenv import load_dotenv
 import os
 
-load_dotenv()
+from config import paths
+load_dotenv(paths.ENV)
 
 driver = GraphDatabase.driver(
     os.getenv("NEO4J_URI"),

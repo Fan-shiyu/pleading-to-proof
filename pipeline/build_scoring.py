@@ -10,7 +10,11 @@ Run with UTF-8 console:
     PYTHONUTF8=1 ./.venv/Scripts/python.exe build_scoring.py
 """
 
+import sys, pathlib; sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))
+
 import json
+
+from config import paths
 
 # --------------------------------------------------------------------------- #
 # Named constants — all thresholds live here
@@ -278,9 +282,9 @@ def validate(results):
 # --------------------------------------------------------------------------- #
 
 def main():
-    with open("classification_results.json", "r", encoding="utf-8") as f:
+    with open(paths.CLASSIFICATION, "r", encoding="utf-8") as f:
         classification_results = json.load(f)
-    with open("propositions.json", "r", encoding="utf-8") as f:
+    with open(paths.PROPOSITIONS, "r", encoding="utf-8") as f:
         propositions = json.load(f)
 
     importance_lookup = {p["proposition_id"]: p["importance_weight"] for p in propositions}
@@ -332,7 +336,7 @@ def main():
         print(f"[Stage 5] {prop_id}: {status} | proof={proof_score} | "
               f"risk={risk_score} | conf={classification_confidence}")
 
-    with open("scoring_results.json", "w", encoding="utf-8") as f:
+    with open(paths.SCORING, "w", encoding="utf-8") as f:
         json.dump(all_results, f, indent=2, ensure_ascii=False)
     print("\n[Stage 5] Complete — scoring_results.json written")
 

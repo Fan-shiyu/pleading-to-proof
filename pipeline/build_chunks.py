@@ -8,14 +8,17 @@ Run with UTF-8 console so spot-checks render £/—/' correctly:
     PYTHONUTF8=1 ./.venv/Scripts/python.exe build_chunks.py
 """
 
+import sys, pathlib; sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))
+
 import json
 import statistics
 
-from parsers import PARSERS
+from config import paths
+from lib.parsers import PARSERS
 
-CHUNKS_FILE = "chunks.json"
-STATS_FILE = "chunk_stats.json"
-REGISTRY_FILE = "registry.json"
+CHUNKS_FILE = paths.CHUNKS
+STATS_FILE = paths.CHUNK_STATS
+REGISTRY_FILE = paths.REGISTRY
 
 # Load the case registry from JSON at runtime, so a new case can swap in a new
 # registry.json without touching Python. document_registry.py remains the

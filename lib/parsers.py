@@ -8,8 +8,8 @@ infer it from the text. All chunk text comes from python-docx via extract.py.
 import os
 import re
 
-from document_registry import BUNDLE_DIR
-from extract import extract_text, iter_blocks
+from lib.document_registry import BUNDLE_DIR
+from lib.extract import extract_text, iter_blocks
 
 # --------------------------------------------------------------------------- #
 # Shared helpers

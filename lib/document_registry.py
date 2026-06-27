@@ -245,5 +245,6 @@ DOCUMENT_REGISTRY = {
     },
 }
 
-# Folder holding the 20 .docx files (per user instruction).
-BUNDLE_DIR = "CMS Challenge - Case Bundle (Synthetic)"
+# Folder holding the 20 .docx files (repo-root/bundle, self-locating).
+from pathlib import Path as _Path
+BUNDLE_DIR = str(_Path(__file__).resolve().parents[1] / "bundle")

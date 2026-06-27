@@ -10,6 +10,8 @@ Run with UTF-8 console:
     PYTHONUTF8=1 ./.venv/Scripts/python.exe build_demo_data.py
 """
 
+import sys, pathlib; sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))
+
 import json
 import os
 import re
@@ -18,6 +20,8 @@ from datetime import datetime
 
 import google.generativeai as genai
 from dotenv import load_dotenv
+
+from config import paths
 
 GEMINI_MODEL_NAME = "gemini-2.5-flash"
 
@@ -211,7 +215,7 @@ def _allegation_key(alleg):
 
 
 def main():
-    load_dotenv()
+    load_dotenv(paths.ENV)
     genai.configure(api_key=os.environ["GEMINI_API_KEY"])
     model = genai.GenerativeModel(
         model_name=GEMINI_MODEL_NAME,
@@ -219,14 +223,14 @@ def main():
         generation_config=genai.GenerationConfig(temperature=0.0),
     )
 
-    scoring_results = {s["proposition_id"]: s for s in json.load(open("scoring_results.json", encoding="utf-8"))}
-    classification_results = {c["proposition_id"]: c for c in json.load(open("classification_results.json", encoding="utf-8"))}
-    propositions = {p["proposition_id"]: p for p in json.load(open("propositions.json", encoding="utf-8"))}
-    retrieval_results = {r["proposition_id"]: r for r in json.load(open("retrieval_results.json", encoding="utf-8"))}
-    graph_data = json.load(open("graph_data.json", encoding="utf-8"))
-    registry = json.load(open("registry.json", encoding="utf-8"))
+    scoring_results = {s["proposition_id"]: s for s in json.load(open(paths.SCORING, encoding="utf-8"))}
+    classification_results = {c["proposition_id"]: c for c in json.load(open(paths.CLASSIFICATION, encoding="utf-8"))}
+    propositions = {p["proposition_id"]: p for p in json.load(open(paths.PROPOSITIONS, encoding="utf-8"))}
+    retrieval_results = {r["proposition_id"]: r for r in json.load(open(paths.RETRIEVAL, encoding="utf-8"))}
+    graph_data = json.load(open(paths.GRAPH, encoding="utf-8"))
+    registry = json.load(open(paths.REGISTRY, encoding="utf-8"))
     registry_list = [v for k, v in registry.items() if not k.startswith("_")]
-    all_chunks = json.load(open("chunks_with_embeddings.json", encoding="utf-8"))
+    all_chunks = json.load(open(paths.EMBEDDINGS, encoding="utf-8"))
 
     propositions_built = []
     validation_failures = 0
@@ -314,7 +318,7 @@ def main():
         },
     }
 
-    with open("demo_data.json", "w", encoding="utf-8") as f:
+    with open(paths.DEMO, "w", encoding="utf-8") as f:
         json.dump(demo_data, f, indent=2, ensure_ascii=False)
 
     validate(demo_data)
@@ -368,7 +372,7 @@ def diagnostics(demo_data, validation_failures):
     for pid in demo_data["risk_dashboard_order"]:
         p = props[pid]
         print(f"{p['risk_score']:.2f}  | {pid:5s} | {p['status']:29s} | {p['one_line_summary']}")
-    size_kb = _os.path.getsize("demo_data.json") / 1024
+    size_kb = _os.path.getsize(paths.DEMO) / 1024
     print(f"\nFile size: {size_kb:.1f} KB")
     print(f"Validation failures (fallback used): {validation_failures}")
     cm = demo_data["case_metadata"]

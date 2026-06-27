@@ -16,6 +16,8 @@ Run with UTF-8 console:
     PYTHONUTF8=1 ./.venv/Scripts/python.exe build_classification.py
 """
 
+import sys, pathlib; sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))
+
 import json
 import os
 import time
@@ -23,8 +25,10 @@ import time
 import google.generativeai as genai
 from dotenv import load_dotenv
 
-RETRIEVAL_FILE = "retrieval_results.json"
-OUTPUT_FILE = "classification_results.json"
+from config import paths
+
+RETRIEVAL_FILE = paths.RETRIEVAL
+OUTPUT_FILE = paths.CLASSIFICATION
 GEMINI_MODEL_NAME = "gemini-2.5-flash"
 
 VALID_STATUS_HINTS = {
@@ -236,7 +240,7 @@ def validate_output(results, total_flags):
 
 
 def main():
-    load_dotenv()
+    load_dotenv(paths.ENV)
     genai.configure(api_key=os.environ["GEMINI_API_KEY"])
     model = genai.GenerativeModel(
         model_name=GEMINI_MODEL_NAME,

@@ -11,6 +11,8 @@ Run with UTF-8 console:
     PYTHONUTF8=1 ./.venv/Scripts/python.exe build_retrieval.py
 """
 
+import sys, pathlib; sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))
+
 import json
 import re
 from collections import defaultdict
@@ -20,11 +22,13 @@ from rank_bm25 import BM25Okapi
 from sentence_transformers import CrossEncoder, SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
 
+from config import paths
+
 # --------------------------------------------------------------------------- #
 # Named constants — all thresholds live here (per spec)
 # --------------------------------------------------------------------------- #
 
-with open("chunks.json", "r", encoding="utf-8") as f:
+with open(paths.CHUNKS, "r", encoding="utf-8") as f:
     chunks = json.load(f)
 
 RRF_K = 60                        # Standard RRF constant — do not tune
@@ -129,7 +133,7 @@ bm25 = BM25Okapi(corpus_tokens)
 print(f"[Stage 3] BM25 index built: {len(evidence_chunks)} documents")
 
 embed_model = SentenceTransformer(EMBED_MODEL_NAME)
-with open("chunks_with_embeddings.json", "r", encoding="utf-8") as f:
+with open(paths.EMBEDDINGS, "r", encoding="utf-8") as f:
     chunks_with_emb = json.load(f)
 evidence_ids = {c["chunk_id"] for c in evidence_chunks}
 emb_lookup = {c["chunk_id"]: np.array(c["embedding"])
@@ -309,14 +313,14 @@ def validate(results):
 # --------------------------------------------------------------------------- #
 
 def main():
-    with open("propositions.json", "r", encoding="utf-8") as f:
+    with open(paths.PROPOSITIONS, "r", encoding="utf-8") as f:
         propositions = json.load(f)
 
     all_results = [retrieve_for_proposition(p) for p in propositions]
 
     validate(all_results)
 
-    with open("retrieval_results.json", "w", encoding="utf-8") as f:
+    with open(paths.RETRIEVAL, "w", encoding="utf-8") as f:
         json.dump(all_results, f, indent=2, ensure_ascii=False)
     print(f"\n[Stage 3] retrieval_results.json written: {len(all_results)} propositions")
 

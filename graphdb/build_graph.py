@@ -10,6 +10,8 @@ Run with UTF-8 console:
     PYTHONUTF8=1 ./.venv/Scripts/python.exe build_graph.py
 """
 
+import sys, pathlib; sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))
+
 import json
 import os
 import re
@@ -18,6 +20,8 @@ import numpy as np
 from dotenv import load_dotenv
 from neo4j import GraphDatabase
 from sklearn.metrics.pairwise import cosine_similarity
+
+from config import paths
 
 # --------------------------------------------------------------------------- #
 # Named constants
@@ -98,17 +102,17 @@ def detect_citations(chunk_text, doc_registry, current_doc_id):
 # --------------------------------------------------------------------------- #
 
 def main():
-    load_dotenv()
+    load_dotenv(paths.ENV)
     driver = GraphDatabase.driver(
         os.environ["NEO4J_URI"],
         auth=(os.environ["NEO4J_USERNAME"], os.environ["NEO4J_PASSWORD"]),
     )
 
-    registry = json.load(open("registry.json", encoding="utf-8"))
+    registry = json.load(open(paths.REGISTRY, encoding="utf-8"))
     doc_registry = [v for k, v in registry.items() if not k.startswith("_")]
-    chunks_with_emb = json.load(open("chunks_with_embeddings.json", encoding="utf-8"))
-    classification_results = json.load(open("classification_results.json", encoding="utf-8"))
-    scoring_results = json.load(open("scoring_results.json", encoding="utf-8"))
+    chunks_with_emb = json.load(open(paths.EMBEDDINGS, encoding="utf-8"))
+    classification_results = json.load(open(paths.CLASSIFICATION, encoding="utf-8"))
+    scoring_results = json.load(open(paths.SCORING, encoding="utf-8"))
 
     # --- Step 1: clear ---
     with driver.session() as session:
@@ -325,7 +329,7 @@ def main():
 
     # --- Export + validate + diagnostics ---
     graph_data = export_graph_data(driver)
-    with open("graph_data.json", "w", encoding="utf-8") as f:
+    with open(paths.GRAPH, "w", encoding="utf-8") as f:
         json.dump(graph_data, f, indent=2, ensure_ascii=False)
     print("[Stage 6] graph_data.json written")
 

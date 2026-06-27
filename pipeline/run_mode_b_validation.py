@@ -15,20 +15,23 @@ Run with UTF-8 console:
     PYTHONUTF8=1 ./.venv/Scripts/python.exe run_mode_b_validation.py
 """
 
+import sys, pathlib; sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))
+
 import json
 
 import numpy as np
 from dotenv import load_dotenv
 
-from build_propositions import (
+from config import paths
+from pipeline.build_propositions import (
     EMBED_MODEL_NAME, IMPORTANCE, MODE_B_PROMPT_TEMPLATE,
     gemini_json, get_centroid_chunks,
 )
 
-EMBEDDINGS_FILE = "chunks_with_embeddings.json"
-MODE_A_FILE = "propositions.json"
-MODE_B_FILE = "propositions_mode_b.json"
-VALIDATION_FILE = "mode_b_validation.json"
+EMBEDDINGS_FILE = paths.EMBEDDINGS
+MODE_A_FILE = paths.PROPOSITIONS
+MODE_B_FILE = paths.MODE_B
+VALIDATION_FILE = paths.MODE_B_VALIDATION
 
 MATCH_THRESHOLD = 0.65
 
@@ -135,7 +138,7 @@ def cross_check(mode_b_props, mode_a_props):
 
 
 def main():
-    load_dotenv()
+    load_dotenv(paths.ENV)
     chunks = json.load(open(EMBEDDINGS_FILE, encoding="utf-8"))
     mode_a_props = json.load(open(MODE_A_FILE, encoding="utf-8"))
     print(f"[Mode B] Forced run on {len(chunks)} chunks "

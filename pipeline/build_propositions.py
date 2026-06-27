@@ -17,16 +17,20 @@ Run with UTF-8 console:
     PYTHONUTF8=1 ./.venv/Scripts/python.exe build_propositions.py
 """
 
+import sys, pathlib; sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))
+
 import json
 import os
 
 import numpy as np
 from dotenv import load_dotenv
 
-CHUNKS_FILE = "chunks.json"
-EMBEDDINGS_FILE = "chunks_with_embeddings.json"
-PROPOSITIONS_FILE = "propositions.json"
-MODE_B_VALIDATION_FILE = "mode_b_validation.json"
+from config import paths
+
+CHUNKS_FILE = paths.CHUNKS
+EMBEDDINGS_FILE = paths.EMBEDDINGS
+PROPOSITIONS_FILE = paths.PROPOSITIONS
+MODE_B_VALIDATION_FILE = paths.MODE_B_VALIDATION
 
 EMBED_MODEL_NAME = "all-MiniLM-L6-v2"
 # Spec named gemini-2.0-flash, but that model now returns 404 (retired for
@@ -319,7 +323,7 @@ def _cross_check_mode_b(mode_b_props):
 # --------------------------------------------------------------------------- #
 
 def main():
-    load_dotenv()
+    load_dotenv(paths.ENV)
     with open(CHUNKS_FILE, "r", encoding="utf-8") as f:
         chunks = json.load(f)
 
