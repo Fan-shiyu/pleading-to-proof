@@ -1,0 +1,11 @@
+Challenge 5.docx
+CMS Challenge - Case Bundle (Synthetic)/
+
+# Secrets
+.env
+
+# Python
+__pycache__/
+*.pyc
+venv/
+.venv/
