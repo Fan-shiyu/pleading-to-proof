@@ -1,0 +1,284 @@
+"""Stage 3 — Hybrid Retrieval.
+
+For each proposition, retrieve the evidence chunks that support or contradict it:
+  BM25 (legal tokeniser) + dense (MiniLM cosine) -> RRF fusion -> cross-encoder
+  NLI filter (drops neutrals, labels direction) WITHOUT reordering the RRF rank.
+
+Inputs (never modified): chunks.json, chunks_with_embeddings.json, propositions.json
+Output: retrieval_results.json (17 proposition results, consumed by Stage 4 + UI)
+
+Run with UTF-8 console:
+    PYTHONUTF8=1 ./.venv/Scripts/python.exe build_retrieval.py
+"""
+
+import json
+import re
+from collections import defaultdict
+
+import numpy as np
+from rank_bm25 import BM25Okapi
+from sentence_transformers import CrossEncoder, SentenceTransformer
+from sklearn.metrics.pairwise import cosine_similarity
+
+# --------------------------------------------------------------------------- #
+# Named constants — all thresholds live here (per spec)
+# --------------------------------------------------------------------------- #
+
+with open("chunks.json", "r", encoding="utf-8") as f:
+    chunks = json.load(f)
+
+RRF_K = 60                        # Standard RRF constant — do not tune
+NEUTRAL_FILTER_THRESHOLD = 0.33   # Discard chunk if BOTH entailment AND contradiction below this
+LETTER_WEIGHT_OVERRIDE = 0.75     # Override Stage 1 value of 0.5 for letter chunks
+GAP_MIN_CHUNKS = max(2, int(0.02 * len(chunks)))  # Corpus-relative gap threshold
+
+# Corpus-relative top-k values
+k_bm25 = max(10, min(30, int(len(chunks) * 0.25)))   # ~24 for 99 chunks
+k_dense = max(8, min(20, int(len(chunks) * 0.15)))    # ~14 for 99 chunks
+k_rrf = max(12, min(20, int(len(chunks) * 0.18)))     # ~17 for 99 chunks, pre-rerank pool
+k_final = 8                       # Max chunks passed to Stage 4 per proposition
+
+EMBED_MODEL_NAME = "all-MiniLM-L6-v2"
+CROSS_ENCODER_NAME = "cross-encoder/nli-deberta-v3-base"
+
+
+# --------------------------------------------------------------------------- #
+# Legal-aware tokeniser for BM25 (verbatim from spec)
+# --------------------------------------------------------------------------- #
+
+def legal_tokenise(text):
+    """Legal-aware tokeniser for BM25.
+
+    Preserves: hyphenated compounds, monetary figures with £, clause references like 14.1.
+    Removes: generic stopwords but NOT legal negations (not, no, without, never). Lowercases.
+    """
+    text = text.lower()
+
+    # Preserve monetary figures: £1,800,000 -> £1800000 (remove commas within figures)
+    text = re.sub(r"£(\d{1,3}(?:,\d{3})*)", lambda m: "£" + m.group(1).replace(",", ""), text)
+
+    # Preserve clause references: 14.1, 3.2, 22.1 — replace dot with underscore temporarily
+    text = re.sub(r"\b(\d+)\.(\d+)\b", r"clause_\1_\2", text)
+
+    # Tokenise on whitespace/punctuation EXCEPT hyphens (compounds) and underscores (clause markers)
+    tokens = re.findall(r"[a-z0-9£_-]+", text)
+
+    STOPWORDS = {
+        "the", "a", "an", "and", "or", "but", "in", "on", "at", "to", "for",
+        "of", "with", "by", "from", "as", "is", "was", "are", "were", "be",
+        "been", "being", "have", "has", "had", "do", "does", "did", "will",
+        "would", "could", "should", "may", "might", "shall", "that", "this",
+        "it", "its", "which", "who", "whom", "their", "they", "we", "our",
+        "i", "my", "he", "she", "his", "her", "you", "your", "such", "any",
+        "each", "all", "both", "other", "into", "also", "than", "then",
+    }
+
+    tokens = [t for t in tokens if t not in STOPWORDS and len(t) > 1]
+    return tokens
+
+
+# --------------------------------------------------------------------------- #
+# Pre-processing: letter weight override + evidence filter
+# --------------------------------------------------------------------------- #
+
+# Letter weight override (in memory only — do not modify chunks.json on disk)
+for chunk in chunks:
+    if chunk["doc_type"] == "letter":
+        chunk["source_quality_weight"] = LETTER_WEIGHT_OVERRIDE
+
+# Evidence filter — never retrieve pleading chunks as evidence
+evidence_chunks = [c for c in chunks if c["is_evidence"] is True and c["doc_type"] != "pleading"]
+print(f"[Stage 3] Evidence corpus: {len(evidence_chunks)} chunks "
+      f"(excluded {len(chunks) - len(evidence_chunks)} non-evidence/pleading chunks)")
+
+
+# --------------------------------------------------------------------------- #
+# One-time setup: BM25, embeddings, cross-encoder
+# --------------------------------------------------------------------------- #
+
+corpus_tokens = [legal_tokenise(c["chunk_text"]) for c in evidence_chunks]
+bm25 = BM25Okapi(corpus_tokens)
+print(f"[Stage 3] BM25 index built: {len(evidence_chunks)} documents")
+
+embed_model = SentenceTransformer(EMBED_MODEL_NAME)
+with open("chunks_with_embeddings.json", "r", encoding="utf-8") as f:
+    chunks_with_emb = json.load(f)
+evidence_ids = {c["chunk_id"] for c in evidence_chunks}
+emb_lookup = {c["chunk_id"]: np.array(c["embedding"])
+              for c in chunks_with_emb if c["chunk_id"] in evidence_ids}
+evidence_embeddings = np.array([emb_lookup[c["chunk_id"]] for c in evidence_chunks])
+print(f"[Stage 3] Evidence embeddings loaded: {evidence_embeddings.shape}")
+
+cross_encoder = CrossEncoder(CROSS_ENCODER_NAME)
+print(f"[Stage 3] Cross-encoder loaded: {CROSS_ENCODER_NAME}")
+
+# Confirm NLI label order from the model card (spec default: [contradiction, entailment, neutral]).
+id2label = cross_encoder.model.config.id2label
+label2idx = {v.lower(): k for k, v in id2label.items()}
+CONTRADICTION_IDX = label2idx.get("contradiction", 0)
+ENTAILMENT_IDX = label2idx.get("entailment", 1)
+NEUTRAL_IDX = label2idx.get("neutral", 2)
+print(f"[Stage 3] NLI label order: {id2label} "
+      f"(contradiction={CONTRADICTION_IDX}, entailment={ENTAILMENT_IDX}, neutral={NEUTRAL_IDX})")
+
+
+# --------------------------------------------------------------------------- #
+# Per-proposition retrieval
+# --------------------------------------------------------------------------- #
+
+def retrieve_for_proposition(proposition):
+    # 4a — BM25 retrieval
+    query_tokens = legal_tokenise(proposition["text"])
+    bm25_scores = bm25.get_scores(query_tokens)
+    bm25_ranked = sorted(enumerate(bm25_scores), key=lambda x: -x[1])
+    bm25_top = bm25_ranked[:k_bm25]
+
+    # 4b — Dense retrieval
+    query_embedding = embed_model.encode([proposition["text"]])[0]
+    similarities = cosine_similarity([query_embedding], evidence_embeddings)[0]
+    dense_ranked = sorted(enumerate(similarities), key=lambda x: -x[1])
+    dense_top = dense_ranked[:k_dense]
+
+    # 4c — RRF fusion
+    rrf_scores = defaultdict(float)
+    for rank, (idx, _) in enumerate(bm25_top):
+        rrf_scores[idx] += 1.0 / (RRF_K + rank + 1)
+    dense_indices = {idx: rank for rank, (idx, _) in enumerate(dense_top)}
+    for idx in rrf_scores:
+        dense_rank = dense_indices.get(idx, 100)
+        rrf_scores[idx] += 1.0 / (RRF_K + dense_rank + 1)
+    for rank, (idx, _) in enumerate(dense_top):
+        if idx not in rrf_scores:
+            bm25_rank = 100
+            rrf_scores[idx] = 1.0 / (RRF_K + bm25_rank + 1) + 1.0 / (RRF_K + rank + 1)
+    rrf_ranked = sorted(rrf_scores.items(), key=lambda x: -x[1])
+    rrf_top = rrf_ranked[:k_rrf]
+
+    # 4d — Cross-encoder classification + neutral filtering
+    pairs = [(evidence_chunks[idx]["chunk_text"], proposition["text"]) for idx, _ in rrf_top]
+    raw_scores = cross_encoder.predict(pairs, apply_softmax=False)
+    raw_scores = np.array(raw_scores)
+    probs = np.exp(raw_scores) / np.exp(raw_scores).sum(axis=1, keepdims=True)
+
+    classified_chunks = []
+    for i, (idx, rrf_score) in enumerate(rrf_top):
+        p_entail = float(probs[i][ENTAILMENT_IDX])
+        p_contradict = float(probs[i][CONTRADICTION_IDX])
+        p_neutral = float(probs[i][NEUTRAL_IDX])
+
+        # Neutral filter: discard if BOTH entailment AND contradiction below threshold
+        if p_entail < NEUTRAL_FILTER_THRESHOLD and p_contradict < NEUTRAL_FILTER_THRESHOLD:
+            continue
+
+        nli_direction = "supporting" if p_entail >= p_contradict else "contradicting"
+
+        chunk = evidence_chunks[idx]
+        classified_chunks.append({
+            "chunk_id": chunk["chunk_id"],
+            "doc_id": chunk["doc_id"],
+            "doc_title": chunk["doc_title"],
+            "doc_type": chunk["doc_type"],
+            "doc_date": chunk["doc_date"],
+            "author_party": chunk["author_party"],
+            "chunk_text": chunk["chunk_text"],
+            "citation": chunk["citation"],
+            "source_quality_weight": chunk["source_quality_weight"],
+            "is_opinion_section": chunk.get("is_opinion_section"),
+            "witness_type": chunk.get("witness_type"),
+            "rrf_score": rrf_score,
+            "p_entailment": p_entail,
+            "p_contradiction": p_contradict,
+            "p_neutral": p_neutral,
+            "nli_direction": nli_direction,
+            # Type-specific citation metadata — pass through for Stage 4 and UI
+            "clause_number": chunk.get("clause_number"),
+            "paragraph_number": chunk.get("paragraph_number"),
+            "witness_name": chunk.get("witness_name"),
+            "expert_name": chunk.get("expert_name"),
+            "section_name": chunk.get("section_name"),
+            "defect_id": chunk.get("defect_id"),
+            "severity": chunk.get("severity"),
+            "cause_attribution": chunk.get("cause_attribution"),
+        })
+
+    # Preserve RRF ranking — do NOT re-sort by NLI score
+    classified_chunks = sorted(classified_chunks, key=lambda x: -x["rrf_score"])
+    final_chunks = classified_chunks[:k_final]
+
+    # 4e — Gap detection
+    retrieval_gap = len(final_chunks) < GAP_MIN_CHUNKS
+
+    # 4f — Result object
+    return {
+        "proposition_id": proposition["proposition_id"],
+        "allegation_number": proposition["allegation_number"],
+        "proposition_text": proposition["text"],
+        "legal_element_type": proposition["legal_element_type"],
+        "importance_weight": proposition["importance_weight"],
+        "retrieval_gap": retrieval_gap,
+        "chunk_count": len(final_chunks),
+        "supporting_count": sum(1 for c in final_chunks if c["nli_direction"] == "supporting"),
+        "contradicting_count": sum(1 for c in final_chunks if c["nli_direction"] == "contradicting"),
+        "retrieved_chunks": final_chunks,
+    }
+
+
+# --------------------------------------------------------------------------- #
+# Validation (assert all; raise on failure)
+# --------------------------------------------------------------------------- #
+
+def validate(results):
+    assert len(results) == 17, f"Expected 17 results, got {len(results)}"
+    for r in results:
+        for key in ("proposition_id", "retrieval_gap", "retrieved_chunks"):
+            assert key in r, f"{r.get('proposition_id')} missing {key}"
+        for c in r["retrieved_chunks"]:
+            assert c["doc_type"] != "pleading", f"Pleading retrieved: {c['chunk_id']}"
+            assert c["source_quality_weight"] != 0.0, f"Weight 0.0 retrieved: {c['chunk_id']}"
+            if c["doc_type"] == "letter":
+                assert c["source_quality_weight"] == 0.75, \
+                    f"Letter weight not overridden: {c['chunk_id']}"
+        assert r["chunk_count"] == len(r["retrieved_chunks"]), \
+            f"{r['proposition_id']} chunk_count mismatch"
+        assert r["supporting_count"] + r["contradicting_count"] == r["chunk_count"], \
+            f"{r['proposition_id']} support+contradict != chunk_count"
+    # is_evidence==False can't occur because evidence_chunks already filters it; assert on source
+    retrieved_ids = {c["chunk_id"] for r in results for c in r["retrieved_chunks"]}
+    assert retrieved_ids.issubset(evidence_ids), "Retrieved a non-evidence chunk"
+
+
+# --------------------------------------------------------------------------- #
+# Main
+# --------------------------------------------------------------------------- #
+
+def main():
+    with open("propositions.json", "r", encoding="utf-8") as f:
+        propositions = json.load(f)
+
+    all_results = [retrieve_for_proposition(p) for p in propositions]
+
+    validate(all_results)
+
+    with open("retrieval_results.json", "w", encoding="utf-8") as f:
+        json.dump(all_results, f, indent=2, ensure_ascii=False)
+    print(f"\n[Stage 3] retrieval_results.json written: {len(all_results)} propositions")
+
+    gap_count = sum(1 for r in all_results if r["retrieval_gap"])
+    print(f"[Stage 3] Propositions with retrieval_gap: {gap_count}")
+
+    # Diagnostic table
+    print("\n[Stage 3] Retrieval complete\n")
+    print(f"{'prop_id':8s} | {'allegation':10s} | {'chunks':6s} | {'supporting':10s} | "
+          f"{'contradicting':13s} | {'gap':5s} | top citation")
+    print("-" * 8 + "-|-" + "-" * 10 + "-|-" + "-" * 6 + "-|-" + "-" * 10 + "-|-"
+          + "-" * 13 + "-|-" + "-" * 5 + "-|-" + "-" * 13)
+    for r in all_results:
+        top_cit = r["retrieved_chunks"][0]["citation"] if r["retrieved_chunks"] else "—"
+        gap = "TRUE" if r["retrieval_gap"] else "false"
+        print(f"{r['proposition_id']:8s} | {str(r['allegation_number']):10s} | "
+              f"{r['chunk_count']:<6d} | {r['supporting_count']:<10d} | "
+              f"{r['contradicting_count']:<13d} | {gap:5s} | {top_cit}")
+
+
+if __name__ == "__main__":
+    main()
