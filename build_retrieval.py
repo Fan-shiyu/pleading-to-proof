@@ -39,6 +39,33 @@ k_dense = max(8, min(20, int(len(chunks) * 0.15)))    # ~14 for 99 chunks
 k_rrf = max(12, min(20, int(len(chunks) * 0.18)))     # ~17 for 99 chunks, pre-rerank pool
 k_final = 8                       # Max chunks passed to Stage 4 per proposition
 
+# Targeted metadata pass-through rules. A chunk matching a rule for the current
+# proposition's legal_element_type bypasses the NLI neutral filter and is added
+# with the rule's assigned direction (used where terse factual evidence — e.g. a
+# logged Platform Severity-1 defect — is real support but does not "entail" the
+# pleading sentence in the NLI sense). Only fires for chunks already in the RRF pool.
+METADATA_PASS_RULES = [
+    {
+        "condition": "defect_log_platform_evidence",
+        "doc_type": "defect_log",
+        "cause_attribution_contains": "Platform",
+        "legal_element_type": "platform_defects",
+        "assigned_direction": "supporting",
+        "rule_label": "defect_log_platform_evidence",
+    }
+]
+
+
+def match_metadata_rule(chunk, legal_element_type):
+    """Return the first metadata rule the chunk matches for this proposition type, else None."""
+    cause = (chunk.get("cause_attribution") or "").lower()
+    for rule in METADATA_PASS_RULES:
+        if (chunk.get("doc_type") == rule["doc_type"]
+                and rule["cause_attribution_contains"].lower() in cause
+                and legal_element_type == rule["legal_element_type"]):
+            return rule
+    return None
+
 EMBED_MODEL_NAME = "all-MiniLM-L6-v2"
 CROSS_ENCODER_NAME = "cross-encoder/nli-deberta-v3-base"
 
@@ -162,28 +189,36 @@ def retrieve_for_proposition(proposition):
     probs = np.exp(raw_scores) / np.exp(raw_scores).sum(axis=1, keepdims=True)
 
     classified_chunks = []
+    prop_ltype = proposition.get("legal_element_type")
     for i, (idx, rrf_score) in enumerate(rrf_top):
-        p_entail = float(probs[i][ENTAILMENT_IDX])
-        p_contradict = float(probs[i][CONTRADICTION_IDX])
-        p_neutral = float(probs[i][NEUTRAL_IDX])
-
-        # rrf_top is RRF-ranked; index i is the RRF rank (0-based).
-        is_floor = i < RRF_FLOOR  # top RRF_FLOOR chunks always pass through
-        below_threshold = (p_entail < NEUTRAL_FILTER_THRESHOLD
-                           and p_contradict < NEUTRAL_FILTER_THRESHOLD)
-
-        # Neutral filter applies only to chunks ranked 4 and below (i >= RRF_FLOOR).
-        if not is_floor and below_threshold:
-            continue
-
-        if is_floor and below_threshold:
-            # Floor chunk the NLI model cannot classify either way.
-            nli_direction = "uncertain"
-        else:
-            nli_direction = "supporting" if p_entail >= p_contradict else "contradicting"
-
         chunk = evidence_chunks[idx]
-        classified_chunks.append({
+        rule = match_metadata_rule(chunk, prop_ltype)
+
+        if rule:
+            # Metadata pass-through: bypass the NLI neutral filter; null out NLI probs.
+            p_entail = p_contradict = p_neutral = None
+            nli_direction = rule["assigned_direction"]
+        else:
+            p_entail = float(probs[i][ENTAILMENT_IDX])
+            p_contradict = float(probs[i][CONTRADICTION_IDX])
+            p_neutral = float(probs[i][NEUTRAL_IDX])
+
+            # rrf_top is RRF-ranked; index i is the RRF rank (0-based).
+            is_floor = i < RRF_FLOOR  # top RRF_FLOOR chunks always pass through
+            below_threshold = (p_entail < NEUTRAL_FILTER_THRESHOLD
+                               and p_contradict < NEUTRAL_FILTER_THRESHOLD)
+
+            # Neutral filter applies only to chunks ranked 4 and below (i >= RRF_FLOOR).
+            if not is_floor and below_threshold:
+                continue
+
+            if is_floor and below_threshold:
+                # Floor chunk the NLI model cannot classify either way.
+                nli_direction = "uncertain"
+            else:
+                nli_direction = "supporting" if p_entail >= p_contradict else "contradicting"
+
+        entry = {
             "chunk_id": chunk["chunk_id"],
             "doc_id": chunk["doc_id"],
             "doc_title": chunk["doc_title"],
@@ -209,7 +244,11 @@ def retrieve_for_proposition(proposition):
             "defect_id": chunk.get("defect_id"),
             "severity": chunk.get("severity"),
             "cause_attribution": chunk.get("cause_attribution"),
-        })
+        }
+        if rule:
+            entry["metadata_rule_applied"] = True
+            entry["metadata_rule_label"] = rule["rule_label"]
+        classified_chunks.append(entry)
 
     # Preserve RRF ranking — do NOT re-sort by NLI score
     classified_chunks = sorted(classified_chunks, key=lambda x: -x["rrf_score"])
