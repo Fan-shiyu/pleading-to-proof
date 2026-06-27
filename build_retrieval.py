@@ -28,7 +28,8 @@ with open("chunks.json", "r", encoding="utf-8") as f:
     chunks = json.load(f)
 
 RRF_K = 60                        # Standard RRF constant — do not tune
-NEUTRAL_FILTER_THRESHOLD = 0.33   # Discard chunk if BOTH entailment AND contradiction below this
+NEUTRAL_FILTER_THRESHOLD = 0.15  # lowered from 0.33 — NLI used for direction labelling not relevance gating
+RRF_FLOOR = 3                     # Top-N chunks by RRF score always bypass the neutral filter
 LETTER_WEIGHT_OVERRIDE = 0.75     # Override Stage 1 value of 0.5 for letter chunks
 GAP_MIN_CHUNKS = max(2, int(0.02 * len(chunks)))  # Corpus-relative gap threshold
 
@@ -166,11 +167,20 @@ def retrieve_for_proposition(proposition):
         p_contradict = float(probs[i][CONTRADICTION_IDX])
         p_neutral = float(probs[i][NEUTRAL_IDX])
 
-        # Neutral filter: discard if BOTH entailment AND contradiction below threshold
-        if p_entail < NEUTRAL_FILTER_THRESHOLD and p_contradict < NEUTRAL_FILTER_THRESHOLD:
+        # rrf_top is RRF-ranked; index i is the RRF rank (0-based).
+        is_floor = i < RRF_FLOOR  # top RRF_FLOOR chunks always pass through
+        below_threshold = (p_entail < NEUTRAL_FILTER_THRESHOLD
+                           and p_contradict < NEUTRAL_FILTER_THRESHOLD)
+
+        # Neutral filter applies only to chunks ranked 4 and below (i >= RRF_FLOOR).
+        if not is_floor and below_threshold:
             continue
 
-        nli_direction = "supporting" if p_entail >= p_contradict else "contradicting"
+        if is_floor and below_threshold:
+            # Floor chunk the NLI model cannot classify either way.
+            nli_direction = "uncertain"
+        else:
+            nli_direction = "supporting" if p_entail >= p_contradict else "contradicting"
 
         chunk = evidence_chunks[idx]
         classified_chunks.append({
@@ -205,8 +215,14 @@ def retrieve_for_proposition(proposition):
     classified_chunks = sorted(classified_chunks, key=lambda x: -x["rrf_score"])
     final_chunks = classified_chunks[:k_final]
 
-    # 4e — Gap detection
-    retrieval_gap = len(final_chunks) < GAP_MIN_CHUNKS
+    supporting_count = sum(1 for c in final_chunks if c["nli_direction"] == "supporting")
+    contradicting_count = sum(1 for c in final_chunks if c["nli_direction"] == "contradicting")
+    uncertain_count = sum(1 for c in final_chunks if c["nli_direction"] == "uncertain")
+
+    # 4e — Gap detection on DIRECTIONAL chunks only. Uncertain floor chunks are
+    # still passed to Stage 4 but do not count against the gap threshold.
+    directional_count = supporting_count + contradicting_count
+    retrieval_gap = directional_count < GAP_MIN_CHUNKS
 
     # 4f — Result object
     return {
@@ -217,8 +233,9 @@ def retrieve_for_proposition(proposition):
         "importance_weight": proposition["importance_weight"],
         "retrieval_gap": retrieval_gap,
         "chunk_count": len(final_chunks),
-        "supporting_count": sum(1 for c in final_chunks if c["nli_direction"] == "supporting"),
-        "contradicting_count": sum(1 for c in final_chunks if c["nli_direction"] == "contradicting"),
+        "supporting_count": supporting_count,
+        "contradicting_count": contradicting_count,
+        "uncertain_count": uncertain_count,
         "retrieved_chunks": final_chunks,
     }
 
@@ -240,8 +257,9 @@ def validate(results):
                     f"Letter weight not overridden: {c['chunk_id']}"
         assert r["chunk_count"] == len(r["retrieved_chunks"]), \
             f"{r['proposition_id']} chunk_count mismatch"
-        assert r["supporting_count"] + r["contradicting_count"] == r["chunk_count"], \
-            f"{r['proposition_id']} support+contradict != chunk_count"
+        assert r["supporting_count"] + r["contradicting_count"] + r.get("uncertain_count", 0) \
+            == r["chunk_count"], \
+            f"{r['proposition_id']} support+contradict+uncertain != chunk_count"
     # is_evidence==False can't occur because evidence_chunks already filters it; assert on source
     retrieved_ids = {c["chunk_id"] for r in results for c in r["retrieved_chunks"]}
     assert retrieved_ids.issubset(evidence_ids), "Retrieved a non-evidence chunk"
@@ -269,15 +287,16 @@ def main():
     # Diagnostic table
     print("\n[Stage 3] Retrieval complete\n")
     print(f"{'prop_id':8s} | {'allegation':10s} | {'chunks':6s} | {'supporting':10s} | "
-          f"{'contradicting':13s} | {'gap':5s} | top citation")
+          f"{'contradicting':13s} | {'uncert':6s} | {'gap':5s} | top citation")
     print("-" * 8 + "-|-" + "-" * 10 + "-|-" + "-" * 6 + "-|-" + "-" * 10 + "-|-"
-          + "-" * 13 + "-|-" + "-" * 5 + "-|-" + "-" * 13)
+          + "-" * 13 + "-|-" + "-" * 6 + "-|-" + "-" * 5 + "-|-" + "-" * 13)
     for r in all_results:
         top_cit = r["retrieved_chunks"][0]["citation"] if r["retrieved_chunks"] else "—"
         gap = "TRUE" if r["retrieval_gap"] else "false"
         print(f"{r['proposition_id']:8s} | {str(r['allegation_number']):10s} | "
               f"{r['chunk_count']:<6d} | {r['supporting_count']:<10d} | "
-              f"{r['contradicting_count']:<13d} | {gap:5s} | {top_cit}")
+              f"{r['contradicting_count']:<13d} | {r.get('uncertain_count', 0):<6d} | "
+              f"{gap:5s} | {top_cit}")
 
 
 if __name__ == "__main__":
