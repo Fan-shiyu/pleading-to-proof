@@ -1,5 +1,7 @@
 # Pleading to Proof — ALLEGATOR
 
+[![Tool](https://img.shields.io/badge/Tool-pleading--to--proof-blue?logo=vercel)](https://pleading-to-proof-txpb.vercel.app/)
+
 An AI evidence-mapping pipeline that stress-tests a litigation case theory by extracting the pleaded
 allegations from a court bundle, retrieving the supporting and contradicting evidence for each one,
 classifying and scoring it against English evidence-law principles, and presenting the result as an
