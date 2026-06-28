@@ -1,4 +1,4 @@
-# Pleading to Proof — CaseLens
+# Pleading to Proof — ALLEGATOR
 
 An AI evidence-mapping pipeline that stress-tests a litigation case theory by extracting the pleaded
 allegations from a court bundle, retrieving the supporting and contradicting evidence for each one,
